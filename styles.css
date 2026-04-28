@@ -41,7 +41,14 @@ body {
 }
 
 .nav-links {
-  display: flex;  /* makes the list horizontal */
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 200;
+  font-style: normal;
+  font-size: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center; 
   gap: 1rem;      /* space between items */
   list-style: none;
 }
