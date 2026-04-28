@@ -38,6 +38,9 @@ body {
   padding: 1rem 2rem;
   background: black;
   color: white;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
 .nav-links {
