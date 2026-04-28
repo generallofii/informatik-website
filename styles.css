@@ -5,6 +5,9 @@
   font-weight: 900;
   font-style: normal;
   font-size: 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .landerTextEmphasis {
   font-family: "Libre Baskerville", serif;
@@ -12,6 +15,9 @@
   font-weight: 700;
   font-style: italic;
   font-size: 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .text {
   font-family: "Inter", sans-serif;
@@ -19,4 +25,7 @@
   font-weight: 200;
   font-style: normal;
   font-size: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
