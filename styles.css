@@ -15,9 +15,6 @@
   font-weight: 700;
   font-style: italic;
   font-size: 4rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 .text {
   font-family: "Inter", sans-serif;
