@@ -26,3 +26,30 @@
   justify-content: center;
   align-items: center;
 }
+body {
+  margin: 0;
+}
+
+/* NAVBAR */
+.navbar {
+  display: flex;
+  justify-content: space-between; /* pushes logo left, links right */
+  align-items: center;            /* vertically center */
+  padding: 1rem 2rem;
+  background: black;
+  color: white;
+}
+
+.nav-links {
+  display: flex;  /* makes the list horizontal */
+  gap: 1rem;      /* space between items */
+  list-style: none;
+}
+
+/* HERO SECTION */
+.lander {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
