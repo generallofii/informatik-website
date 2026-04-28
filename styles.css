@@ -1,17 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Libre+Baskerville:ital,wght@0,700;1,700&display=swap');
-landerText {
+.landerText {
   font-family: "Inter", sans-serif;
   font-optical-sizing: auto;
   font-weight: 900;
   font-style: normal;
 }
-landerTextEmphasis {
+.landerTextEmphasis {
   font-family: "Libre Baskerville", serif;
   font-optical-sizing: auto;
   font-weight: 700;
   font-style: italic;
 }
-text {
+.text {
   font-family: "Inter", sans-serif;
   font-optical-sizing: auto;
   font-weight: 200;
