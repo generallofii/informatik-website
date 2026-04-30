@@ -117,3 +117,71 @@ body {
     transform: translateY(-1px);
 }
 /*END OF BUTTON*/
+/* pricing */
+.pricing {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* Centers the section on the screen */
+  background-color: #f4f7f6;
+}
+
+.pricing-container {
+  display: flex;
+  gap: 20px;
+  width: 90%;
+  max-width: 1200px;
+  align-items: stretch; /* Ensures all cards match height */
+}
+
+.pricing-card {
+  flex: 1;
+  height: 50vh; /* As requested */
+  background: white;
+  padding: 40px;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Keeps button at the bottom */
+}
+/* Highlight the center card */
+.pricing-card.featured {
+  border: 2px solid #007bff;
+  transform: scale(1.05);
+  z-index: 1;
+}
+
+/* Hover Animation */
+.pricing-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+/* Featured hover override to maintain scale */
+.pricing-card.featured:hover {
+  transform: scale(1.08) translateY(-10px);
+}
+
+/* Subtle Entrance Animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.pricing-card {
+  animation: fadeInUp 0.6s ease-out both;
+}
+
+/* Staggered animation for each card */
+.pricing-card:nth-child(1) { animation-delay: 0.1s; }
+.pricing-card:nth-child(2) { animation-delay: 0.2s; }
+.pricing-card:nth-child(3) { animation-delay: 0.3s; }
