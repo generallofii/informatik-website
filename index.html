@@ -1,11 +1,41 @@
 <!DOCTYPE html>
-  <html>
-    <head>
-     <h1> About Us</h1>
-    </body>
-  </html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>Layout Beispiel</title>
+  <style>
+    .container {
+      display: flex;
+      align-items: center; 
+      justify-content: space-between;
+      padding: 20px;
+    }
 
+    .text {
+      width: 50%;
+      font-size: 20px;
+    }
 
+    .logo img {
+      width: 200px; 
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="text">
+      <h1>Mein Text</h1>
+      <p>Hier kannst du deinen Text schreiben.</p>
+    </div>
+
+    <div class="logo">
+      <img src="logo.png" alt="Logo">
+    </div>
+  </div>
+
+</body>
+</html>
 
 
 
