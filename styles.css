@@ -65,7 +65,7 @@ body {
   background-repeat: no-repeat;
   
   /* 2. Set the height */
-  min-height: 85vh;            /* 85% of the screen height */
+  min-height: 87.5vh;            /* 87.5% of the screen height */
   width: 100%;
 
   /* 3. Center the text using felxy */
