@@ -82,3 +82,27 @@ body {
 .lander {
   background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('/lander.png');
 }
+/*button style class name button14*/
+.button14 {
+    width: 160px;
+    height: 60px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    background-color: #0c0c0c;
+    border-radius: 10px;
+    outline: none;
+    border: none;
+    transition: all 0.3s ease 0s;
+}
+.button14:hover {
+    background-color: #3838ff;
+    color: #fff;
+    transform: translateY(-7px);
+}
+.button14:active {
+    transform: translateY(-1px);
+}
+/*END OF BUTTON*/
