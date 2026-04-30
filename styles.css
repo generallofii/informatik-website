@@ -181,6 +181,17 @@ body {
   font-weight: 300;
   font-style: bold;
   font-size: 1rem;
+  display: flex;
+  flex-direction: column;
+  
+  /* Horizontal alignment */
+  align-items: center; 
+  
+  /* Vertical alignment */
+  justify-content: center; 
+  
+  /*  text within the card is centered */
+  text-align: center;
 }
 /* Highlight the center card */
 .pricing-card.featured {
@@ -224,6 +235,11 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.pricing-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0;
 }
 /* Staggered animation for each card */
 .pricing-card:nth-child(1) { animation-delay: 0.1s; }
