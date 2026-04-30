@@ -215,7 +215,16 @@ body {
 .pricing-card {
   animation: fadeInUp 0.6s ease-out both;
 }
-
+.pricingTitle {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 /* Staggered animation for each card */
 .pricing-card:nth-child(1) { animation-delay: 0.1s; }
 .pricing-card:nth-child(2) { animation-delay: 0.2s; }
