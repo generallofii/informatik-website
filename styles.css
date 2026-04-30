@@ -65,7 +65,7 @@ body {
   background-repeat: no-repeat;
   
   /* 2. Set the height */
-  min-height: 80vh;            /* 80% of the screen height */
+  min-height: 100vh;            /* 100% of the screen height */
   width: 100%;
 
   /* 3. Center the text using Flexbox */
