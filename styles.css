@@ -116,6 +116,36 @@ body {
 .button14:active {
     transform: translateY(-1px);
 }
+.button14big {
+    width: 96px;
+    height: 48px;
+    color: #fff;
+    cursor: pointer;
+    text-align: center;
+    background-color: #262626;
+    border-radius: 15px;
+    outline: none;
+    border: none;
+    transition: all 0.3s ease 0s;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: bold;
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    gap: 2rem;      /* space between items */
+    list-style: none;
+}
+.button14big:hover {
+    background-color: #3838ff;
+    color: #fff;
+    transform: translateY(-7px);
+}
+.button14big:active {
+    transform: translateY(-1px);
+}
 /*END OF BUTTON*/
 /* pricing */
 .pricing {
