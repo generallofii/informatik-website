@@ -54,6 +54,9 @@ body {
   align-items: center; 
   gap: 2rem;      /* space between items */
   list-style: none;
+  list-style-type: none; /* Removes the bullet points */
+  margin: 0;             /* Removes default browser margins */
+  padding: 0;            /* Removes default browser padding */
 }
 
 /* HERO SECTION */
