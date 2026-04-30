@@ -58,9 +58,27 @@ body {
 
 /* HERO SECTION */
 .lander {
-  height: 100vh;
+  /* 1. Set the background */
+  background-image: url('/lander.png');
+  background-size: cover;      /* Scales the image to fill the area */
+  background-position: center; /* Keeps the focus in the middle */
+  background-repeat: no-repeat;
+  
+  /* 2. Set the height */
+  min-height: 80vh;            /* 80% of the screen height */
+  width: 100%;
+
+  /* 3. Center the text using Flexbox */
   display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+  flex-direction: column;      /* Stacks lines vertically */
+  justify-content: center;     /* Centers vertically */
+  align-items: center;         /* Centers horizontally */
+  
+  text-align: center;
+  color: white;                /* Ensures text stands out */
+}
+
+/* Optional: Add a dark overlay so text is easier to read */
+.lander {
+  background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('/lander.png');
 }
