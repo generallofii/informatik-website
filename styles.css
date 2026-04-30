@@ -117,8 +117,8 @@ body {
     transform: translateY(-1px);
 }
 .button14big {
-    width: 96px;
-    height: 48px;
+    width: 128px;
+    height: 64px;
     color: #fff;
     cursor: pointer;
     text-align: center;
@@ -131,7 +131,7 @@ body {
     font-optical-sizing: auto;
     font-weight: 300;
     font-style: bold;
-    font-size: 1.5rem;
+    font-size: 1rem;
     display: flex;
     justify-content: center;
     align-items: center; 
