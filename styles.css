@@ -65,10 +65,10 @@ body {
   background-repeat: no-repeat;
   
   /* 2. Set the height */
-  min-height: 86.5vh;            /* 86.5% of the screen height */
+  min-height: 86vh;            /* 86% of the screen height */
   width: 100%;
 
-  /* 3. Center the text using felxy */
+  /* 3. Center the text using flexy */
   display: flex;
   flex-direction: column;      /* Stacks lines vertically */
   justify-content: center;     /* Centers vertically */
