@@ -84,18 +84,26 @@ body {
 }
 /*button style class name button14*/
 .button14 {
-    width: 160px;
-    height: 60px;
+    width: 96px;
+    height: 48px;
     color: #fff;
     cursor: pointer;
-    font-size: 16px;
-    font-weight: bold;
     text-align: center;
     background-color: #0c0c0c;
-    border-radius: 10px;
+    border-radius: 15px;
     outline: none;
     border: none;
     transition: all 0.3s ease 0s;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: bold;
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    gap: 2rem;      /* space between items */
+    list-style: none;
 }
 .button14:hover {
     background-color: #3838ff;
