@@ -6,23 +6,33 @@ body {
 
 /* NAVBAR */
 .navbar {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    padding: 15px;
-    background: rgba(0,0,0,0.7);
-    backdrop-filter: blur(10px);
-    z-index: 1000;
+  display: flex;
+  justify-content: space-between; /* pushes logo left, links right */
+  align-items: center;            /* vertically center */
+  padding: 1rem 1rem;
+  background: black;
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
-.navbar a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
+.nav-links {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: bold;
+  font-size: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+  gap: 2rem;      /* space between items */
+  list-style: none;
+  list-style-type: none; /* Removes the bullet points */
+  margin: 0;             /* Removes default browser margins */
+  padding: 0;            /* Removes default browser padding */
 }
+
 
 /* HERO */
 .top {
