@@ -154,3 +154,33 @@ h2 {
 .button14big:active {
     transform: translateY(-1px);
 }
+.landerText {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 900;
+  font-style: normal;
+  font-size: 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.lander {
+  /* 1. Set the background */
+  background-image: url('/lander.png');
+  background-size: cover;      /* Scales the image to fill the area */
+  background-position: center; /* Keeps the focus in the middle */
+  background-repeat: no-repeat;
+  
+  /* 2. Set the height */
+  min-height: 86vh;            /* 86% of the screen height */
+  width: 100%;
+
+  /* 3. Center the text using flexy */
+  display: flex;
+  flex-direction: column;      /* Stacks lines vertically */
+  justify-content: center;     /* Centers vertically */
+  align-items: center;         /* Centers horizontally */
+  
+  text-align: center;
+  color: white;                /*  text stands out */
+}
