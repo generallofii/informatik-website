@@ -1,7 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Libre+Baskerville:ital,wght@0,700;1,700&display=swap');
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    padding-top: 70px; /* WICHTIG wegen fixer Navbar */
+    font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 250;
+  font-style: normal;
+  font-size: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /* NAVBAR */
