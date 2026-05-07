@@ -345,11 +345,11 @@ body {
     .feature-content p {
         text-align: center !important;
     }
-/* FOOTER STYLING */
 .footer {
-    padding: 60px 0 30px 0;
+    padding: 80px 0;
     background-color: #fff;
     border-top: 1px solid #eee;
+    text-align: center;
 }
 
 .footer-container {
@@ -359,85 +359,63 @@ body {
     gap: 20px;
 }
 
+/* FLOATING BACK-TO-TOP BUBBLE */
 .back-to-top {
-    width: 50px;
-    height: 50px;
+    /* Fixed Positioning - Always Bottom Right */
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    z-index: 9999;
+    
+    /* Perfect Circle Shape & Size */
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    
+    /* Background & Text */
     background-color: #262626;
     color: white;
-    border-radius: 50%;
+    text-decoration: none;
+    
+    /* Centering the SVG Arrow */
     display: flex;
     justify-content: center;
     align-items: center;
-    text-decoration: none;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    
+    /* Aesthetics & Smooth Pop Animation */
+    box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    
+    /* Controls visibility via JS */
+    opacity: 0; 
+    pointer-events: none;
 }
 
 .back-to-top:hover {
     background-color: #3838ff;
-    transform: translateY(-5px);
+    color: white;
+    transform: translateY(-8px) scale(1.1);
 }
 
 .back-to-top svg {
-    transition: transform 0.3s ease;
+    display: block;
 }
 
-/* Smooth scroll behavior for the whole page */
+/* GLOBAL SMOOTH SCROLLING */
 html {
     scroll-behavior: smooth;
 }
 
+/* MOBILE ADJUSTMENTS */
 @media (max-width: 900px) {
     .footer {
         padding: 40px 0 20px 0;
     }
-}
-  /* SMOOTH SCROLLING */
-html {
-  scroll-behavior: smooth; /* Fixes the "instant" jump issue */
-}
-
-/* FLOATING BUTTON STYLING */
-.back-to-top {
-  /* Positioning */
-  position: fixed;
-  bottom: 40px;
-  right: 40px;
-  z-index: 9999;
-  
-  /* Size & Shape (The Circular Bubble) */
-  width: 64px; 
-  height: 64px;
-  background-color: #262626;
-  color: white;
-  border-radius: 50%; /* Makes it a perfect circle */
-  
-  /* Centering the Icon */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  
-  /* Aesthetics */
-  text-decoration: none;
-  box-shadow: 0 8px 25px rgba(0,0,0,0.2);
-  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  
-  /* Hidden by default, revealed via JS or kept permanent */
-  opacity: 1; 
-}
-
-.back-to-top:hover {
-  background-color: #3838ff;
-  transform: translateY(-8px) scale(1.1);
-}
-
-.back-to-top svg {
-  display: block;
-}
-
-/* Footer padding so the button doesn't cover text at the very bottom */
-.footer {
-  padding: 80px 0;
-  border-top: 1px solid #eee;
-  text-align: center;
+    
+    .back-to-top {
+        bottom: 20px;
+        right: 20px;
+        width: 50px;
+        height: 50px;
+    }
 }
