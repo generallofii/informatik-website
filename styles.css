@@ -268,3 +268,83 @@ body {
 .pricing-card:nth-child(1) { animation-delay: 0.1s; }
 .pricing-card:nth-child(2) { animation-delay: 0.2s; }
 .pricing-card:nth-child(3) { animation-delay: 0.3s; }
+/* FEATURE SECTION STYLING */
+.features-section {
+    padding: 80px 10%;
+    background-color: white;
+}
+
+.feature-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 60px;
+    margin-bottom: 100px;
+}
+
+/* Logic for alternating layout */
+.feature-row.reverse {
+    flex-direction: row-reverse;
+}
+
+.feature-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Aligns text and button to the left */
+    gap: 20px;
+}
+
+.feature-image-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+/* Perfect Square Images */
+.square-placeholder {
+    width: 100%;
+    max-width: 450px;
+    aspect-ratio: 1 / 1;
+    background-color: #f4f7f6;
+    border-radius: 20px;
+    border: 1px solid #e0e0e0;
+    background-image: linear-gradient(45deg, #f0f0f0 25%, transparent 25%); /* Visual flare */
+}
+
+/* MOBILE SAFETY & RESPONSIVENESS */
+@media (max-width: 900px) {
+    /* Make Pricing Cards stack vertically */
+    .pricing-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
+    }
+
+    .pricing-card {
+        width: 100%;
+        height: auto; /* Let content dictate height on mobile */
+        min-height: 450px;
+        transform: scale(1) !important; /* Disable scaling on mobile for better fit */
+    }
+
+    /* Make Feature Rows stack vertically */
+    .feature-row, .feature-row.reverse {
+        flex-direction: column;
+        text-align: center;
+        gap: 30px;
+    }
+
+    .feature-content {
+        align-items: center; /* Center text/buttons on mobile */
+    }
+
+    .feature-content p {
+        text-align: center !important;
+    }
+
+    /* Shrink fonts for mobile screens */
+    .landerText, .landerTextEmphasis {
+        font-size: 2.5rem;
+    }
+}
