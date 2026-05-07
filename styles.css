@@ -392,3 +392,52 @@ html {
         padding: 40px 0 20px 0;
     }
 }
+  /* SMOOTH SCROLLING */
+html {
+  scroll-behavior: smooth; /* Fixes the "instant" jump issue */
+}
+
+/* FLOATING BUTTON STYLING */
+.back-to-top {
+  /* Positioning */
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  z-index: 9999;
+  
+  /* Size & Shape (The Circular Bubble) */
+  width: 64px; 
+  height: 64px;
+  background-color: #262626;
+  color: white;
+  border-radius: 50%; /* Makes it a perfect circle */
+  
+  /* Centering the Icon */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  /* Aesthetics */
+  text-decoration: none;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  
+  /* Hidden by default, revealed via JS or kept permanent */
+  opacity: 1; 
+}
+
+.back-to-top:hover {
+  background-color: #3838ff;
+  transform: translateY(-8px) scale(1.1);
+}
+
+.back-to-top svg {
+  display: block;
+}
+
+/* Footer padding so the button doesn't cover text at the very bottom */
+.footer {
+  padding: 80px 0;
+  border-top: 1px solid #eee;
+  text-align: center;
+}
