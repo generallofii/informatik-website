@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Libre+Baskerville:ital,wght@0,700;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
 .landerText {
   font-family: "Inter", sans-serif;
   font-optical-sizing: auto;
@@ -27,10 +28,10 @@
   align-items: center;
 }
 .textEmphasis {
-  font-family: "Libre Baskerville", serif;
+  font-family: "Playfair Display", serif;
   font-optical-sizing: auto;
   font-weight: 500;
-  font-style: italic;
+  font-style: normal;
   font-size: 2rem;
 }
 body {
