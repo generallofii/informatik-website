@@ -246,17 +246,15 @@ body {
   margin-bottom: 20px; 
   
   /* Setting the side constraints */
-  width: calc(100% - 40px); /* 20px left + 20px right */
-  max-width: 80px; /* Adjust this based on how large you want your icons */
-  height: auto;
+  width: 300px; /* 20px left + 20px right */
+  height: 75px
   
   /* Ensures the image stays centered within its container */
   display: block;
   margin-left: auto;
   margin-right: auto;
   
-  /* Optional: if you want a background circle/square for the icon */
-  padding: 10px;
+ 
   object-fit: contain;
 }
 /* Staggered animation for each card */
