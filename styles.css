@@ -26,6 +26,13 @@
   justify-content: center;
   align-items: center;
 }
+.textEmphasis {
+  font-family: "Libre Baskerville", serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: italic;
+  font-size: 2rem;
+}
 body {
   margin: 0;
 }
