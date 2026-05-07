@@ -247,7 +247,7 @@ body {
   
   /* Setting the side constraints */
   width: 300px; /* 20px left + 20px right */
-  height: 75px
+  height: 75px;
   
   /* Ensures the image stays centered within its container */
   display: block;
