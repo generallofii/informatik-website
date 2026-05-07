@@ -345,5 +345,50 @@ body {
     .feature-content p {
         text-align: center !important;
     }
+/* FOOTER STYLING */
+.footer {
+    padding: 60px 0 30px 0;
+    background-color: #fff;
+    border-top: 1px solid #eee;
+}
 
+.footer-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
 
+.back-to-top {
+    width: 50px;
+    height: 50px;
+    background-color: #262626;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.back-to-top:hover {
+    background-color: #3838ff;
+    transform: translateY(-5px);
+}
+
+.back-to-top svg {
+    transition: transform 0.3s ease;
+}
+
+/* Smooth scroll behavior for the whole page */
+html {
+    scroll-behavior: smooth;
+}
+
+@media (max-width: 900px) {
+    .footer {
+        padding: 40px 0 20px 0;
+    }
+}
