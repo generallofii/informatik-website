@@ -106,32 +106,47 @@
 
   </div>
     </section>
+<!-- FOOTER SECTION -->
+    <footer class="footer">
+      <div class="footer-container">
+        <p class="text" style="font-size: 1rem; color: #888;">
+          &copy; 2026 Digitify Inc. Alle Rechte vorbehalten.
+        </p>
+      </div>
+    </footer>
+
+    <!-- THE BUBBLE BUTTON (Place this last) -->
+    <a href="#" class="back-to-top" id="backToTop">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M18 15l-6-6-6 6"/>
+      </svg>
+    </a>
+
+    <!-- THE SCRIPT (Crucial for Smooth Scroll + Reveal) -->
     <script>
-  const backToTop = document.getElementById("backToTop");
+      const btn = document.getElementById("backToTop");
 
-  window.onscroll = function() {
-    if (document.body.scrollTop > 400 || document.documentElement.scrollTop > 400) {
-      backToTop.style.opacity = "1";
-      backToTop.style.pointerEvents = "auto";
-    } else {
-      backToTop.style.opacity = "0";
-      backToTop.style.pointerEvents = "none";
-    }
-  };
-</script>
+      window.onscroll = function() {
+        // Only show bubble after scrolling 400px
+        if (window.scrollY > 400) {
+          btn.style.opacity = "1";
+          btn.style.pointerEvents = "auto";
+          btn.style.transform = "scale(1)";
+        } else {
+          btn.style.opacity = "0";
+          btn.style.pointerEvents = "none";
+          btn.style.transform = "scale(0.8)";
+        }
+      };
+
+      // JS Backup to ensure smooth scroll isn't "instant"
+      btn.addEventListener("click", function(e) {
+        e.preventDefault();
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth"
+        });
+      });
+    </script>
   </body>
-<footer class="footer">
-  <div class="footer-container">
-    <p class="text" style="font-size: 1rem; color: #888;">
-      &copy; 2026 Digitify Inc. Alle Rechte vorbehalten.
-    </p>
-  </div>
-</footer>
-
-
-<a href="#" class="back-to-top" id="backToTop">
-  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M18 15l-6-6-6 6"/>
-  </svg>
-</a>
 </html>
