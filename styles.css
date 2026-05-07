@@ -110,3 +110,42 @@ p {
 h2 {
     margin-top: 40px;
 }
+/* Container */
+.socials {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+
+    margin-top: 40px;
+}
+
+/* Buttons */
+.socials a {
+    width: 60px;
+    height: 60px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 50%;
+
+    background: #111;
+    color: white;
+
+    font-size: 24px;
+    text-decoration: none;
+
+    transition: 0.3s ease;
+
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+/* Hover Effekt */
+.socials a:hover {
+    background: #1e90ff;
+
+    transform: translateY(-5px) scale(1.1);
+
+    box-shadow: 0 0 20px #1e90ff;
+}
