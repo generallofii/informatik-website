@@ -343,8 +343,4 @@ body {
         text-align: center !important;
     }
 
-    /* Shrink fonts for mobile screens */
-    .landerText, .landerTextEmphasis {
-        font-size: 2.5rem;
-    }
-}
+
