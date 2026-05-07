@@ -1,0 +1,421 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Libre+Baskerville:ital,wght@0,700;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+.landerText {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 900;
+  font-style: normal;
+  font-size: 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.landerTextEmphasis {
+  font-family: "Libre Baskerville", serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: italic;
+  font-size: 4rem;
+}
+.text {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 250;
+  font-style: normal;
+  font-size: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.textEmphasis {
+  font-family: "Playfair Display", serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 2rem;
+  display: inline-block;
+  margin-left: 0.3rem;
+}
+body {
+  margin: 0;
+}
+
+/* NAVBAR */
+.navbar {
+  display: flex;
+  justify-content: space-between; /* pushes logo left, links right */
+  align-items: center;            /* vertically center */
+  padding: 1rem 1rem;
+  background: black;
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.nav-links {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: bold;
+  font-size: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+  gap: 2rem;      /* space between items */
+  list-style: none;
+  list-style-type: none; /* Removes the bullet points */
+  margin: 0;             /* Removes default browser margins */
+  padding: 0;            /* Removes default browser padding */
+}
+
+/* HERO SECTION */
+.lander {
+  /* 1. Set the background */
+  background-image: url('/lander.png');
+  background-size: cover;      /* Scales the image to fill the area */
+  background-position: center; /* Keeps the focus in the middle */
+  background-repeat: no-repeat;
+  
+  /* 2. Set the height */
+  min-height: 86vh;            /* 86% of the screen height */
+  width: 100%;
+
+  /* 3. Center the text using flexy */
+  display: flex;
+  flex-direction: column;      /* Stacks lines vertically */
+  justify-content: center;     /* Centers vertically */
+  align-items: center;         /* Centers horizontally */
+  
+  text-align: center;
+  color: white;                /*  text stands out */
+}
+
+/*easyread darkness*/
+.lander {
+  background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('/lander.png');
+}
+/*button style class name button14*/
+.button14 {
+    width: 96px;
+    height: 48px;
+    color: #fff;
+    cursor: pointer;
+    text-align: center;
+    background-color: #262626;
+    border-radius: 15px;
+    outline: none;
+    border: none;
+    transition: all 0.3s ease 0s;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: bold;
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    gap: 2rem;      /* space between items */
+    list-style: none;
+}
+.button14:hover {
+    background-color: #3838ff;
+    color: #fff;
+    transform: translateY(-7px);
+}
+.button14:active {
+    transform: translateY(-1px);
+}
+.button14big {
+    width: 128px;
+    height: 48px;
+    color: #fff;
+    cursor: pointer;
+    text-align: center;
+    background-color: #262626;
+    border-radius: 15px;
+    outline: none;
+    border: none;
+    transition: all 0.3s ease 0s;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: bold;
+    font-size: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    gap: 2rem;      /* space between items */
+    list-style: none;
+}
+.button14big:hover {
+    background-color: #3838ff;
+    color: #fff;
+    transform: translateY(-7px);
+}
+.button14big:active {
+    transform: translateY(-1px);
+}
+/*END OF BUTTON*/
+/* pricing */
+.pricing {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* Centers the section on the screen */
+  background-color: #f4f7f6;
+}
+
+.pricing-container {
+  display: flex;
+  gap: 20px;
+  width: 90%;
+  max-width: 1200px;
+  align-items: stretch; /* Ensures all cards match height */
+}
+
+.pricing-card {
+  flex: 1;
+  height: 50vh; /* As requested */
+  background: white;
+  padding: 40px;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Keeps button at the bottom */
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: bold;
+  font-size: 1rem;
+  display: flex;
+  flex-direction: column;
+  
+  /* Horizontal alignment */
+  align-items: center; 
+  
+  /* Vertical alignment */
+  justify-content: center; 
+  
+  /*  text within the card is centered */
+  text-align: center;
+}
+/* Highlight the center card */
+.pricing-card.featured {
+  border: 2px solid #007bff;
+  transform: scale(1.05);
+  z-index: 1;
+}
+
+/* Hover Animation */
+.pricing-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+/* Featured hover override to maintain scale */
+.pricing-card.featured:hover {
+  transform: scale(1.08) translateY(-10px);
+}
+
+/* Subtle Entrance Animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.pricing-card {
+  animation: fadeInUp 0.6s ease-out both;
+}
+.pricingTitle {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.pricing-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0;
+}
+.pricingIcon {
+  /* Spacing from the top/bottom content */
+  margin-bottom: 20px; 
+  
+  /* Setting the side constraints */
+  width: 300px; /* 20px left + 20px right */
+  height: 80px;
+  
+  /* Ensures the image stays centered within its container */
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  
+ 
+  object-fit: contain;
+}
+/* Staggered animation for each card */
+.pricing-card:nth-child(1) { animation-delay: 0.1s; }
+.pricing-card:nth-child(2) { animation-delay: 0.2s; }
+.pricing-card:nth-child(3) { animation-delay: 0.3s; }
+/* FEATURE SECTION STYLING */
+.features-section {
+    padding: 80px 10%;
+    background-color: white;
+}
+
+.feature-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 60px;
+    margin-bottom: 100px;
+}
+
+/* Logic for alternating layout */
+.feature-row.reverse {
+    flex-direction: row-reverse;
+}
+
+.feature-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Aligns text and button to the left */
+    gap: 20px;
+}
+
+.feature-image-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+/* Perfect Square Images */
+.square-placeholder {
+    width: 100%;
+    max-width: 450px;
+    aspect-ratio: 1 / 1;
+    background-color: #f4f7f6;
+    border-radius: 20px;
+    border: 1px solid #e0e0e0;
+    background-image: linear-gradient(45deg, #f0f0f0 25%, transparent 25%); /* Visual flare */
+}
+
+/* MOBILE SAFETY & RESPONSIVENESS */
+@media (max-width: 900px) {
+    /* Make Pricing Cards stack vertically */
+    .pricing-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
+    }
+
+    .pricing-card {
+        width: 100%;
+        height: auto; /* Let content dictate height on mobile */
+        min-height: 450px;
+        transform: scale(1) !important; /* Disable scaling on mobile for better fit */
+    }
+
+    /* Make Feature Rows stack vertically */
+    .feature-row, .feature-row.reverse {
+        flex-direction: column;
+        text-align: center;
+        gap: 30px;
+    }
+
+    .feature-content {
+        align-items: center; /* Center text/buttons on mobile */
+    }
+
+    .feature-content p {
+        text-align: center !important;
+    }
+.footer {
+    padding: 80px 0;
+    background-color: #fff;
+    border-top: 1px solid #eee;
+    text-align: center;
+}
+
+.footer-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+/* FLOATING BACK-TO-TOP BUBBLE */
+.back-to-top {
+    /* Fixed Positioning - Always Bottom Right */
+    position: fixed;
+    bottom: 75px;
+    right: 75px;
+    z-index: 9999;
+    
+    /* Perfect Circle Shape & Size */
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    
+    /* Background & Text */
+    background-color: #262626;
+    color: white;
+    text-decoration: none;
+    
+    /* Centering the SVG Arrow */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    /* Aesthetics & Smooth Pop Animation */
+    box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    
+    /* Controls visibility via JS */
+    opacity: 0; 
+    pointer-events: none;
+}
+
+.back-to-top:hover {
+    background-color: #3838ff;
+    color: white;
+    transform: translateY(-8px) scale(1.1);
+}
+
+.back-to-top svg {
+    display: block;
+}
+
+/* GLOBAL SMOOTH SCROLLING */
+html {
+    scroll-behavior: smooth;
+}
+
+/* MOBILE ADJUSTMENTS */
+@media (max-width: 900px) {
+    .footer {
+        padding: 40px 0 20px 0;
+    }
+    
+    .back-to-top {
+        bottom: 20px;
+        right: 20px;
+        width: 50px;
+        height: 50px;
+    }
+}
