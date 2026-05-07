@@ -106,7 +106,19 @@
 
   </div>
     </section>
-    
+    <script>
+  const backToTop = document.getElementById("backToTop");
+
+  window.onscroll = function() {
+    if (document.body.scrollTop > 400 || document.documentElement.scrollTop > 400) {
+      backToTop.style.opacity = "1";
+      backToTop.style.pointerEvents = "auto";
+    } else {
+      backToTop.style.opacity = "0";
+      backToTop.style.pointerEvents = "none";
+    }
+  };
+</script>
   </body>
 <footer class="footer">
   <div class="footer-container">
