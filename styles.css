@@ -246,8 +246,8 @@ body {
   margin-bottom: 20px; 
   
   /* Setting the side constraints */
-  width: 400px; /* 20px left + 20px right */
-  height: 100px;
+  width: 300px; /* 20px left + 20px right */
+  height: 80px;
   
   /* Ensures the image stays centered within its container */
   display: block;
