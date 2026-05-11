@@ -1,10 +1,12 @@
 function acceptCookies() {
-    const popup = document.getElementById('cookiePopup');
-    popup.classList.add('hidden');
+    const overlay = document.getElementById('cookieOverlay');
+    overlay.classList.add('hidden');
     localStorage.setItem('cookieConsent', 'true');
 }
-window.onload = function() {
+
+// Check on load
+window.addEventListener('DOMContentLoaded', () => {
     if (localStorage.getItem('cookieConsent') === 'true') {
-        document.getElementById('cookiePopup').style.display = 'none';
+        document.getElementById('cookieOverlay').style.display = 'none';
     }
-};
+});
