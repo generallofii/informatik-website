@@ -419,49 +419,53 @@ html {
         height: 50px;
     }
 }
- /* THE OVERLAY - This must cover the entire viewport */
+/* THE OVERLAY - Fixes it to the center of the viewport */
 .cookie-overlay {
-    position: fixed; /* Fixes it relative to the screen, not the page height */
+    position: fixed;
     top: 0;
     left: 0;
     width: 100vw;
     height: 100vh;
-    background-color: rgba(0, 0, 0, 0.7); /* Darken background */
-    backdrop-filter: blur(8px);           /* Sophisticated blur effect */
-    display: flex;
+    background-color: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(8px);
+    
+    /* This is the magic for centering */
+    display: flex; 
     justify-content: center;
     align-items: center;
-    z-index: 99999; /* Ensure it is above the navbar and back-to-top */
+    
+    z-index: 100000; /* Higher than everything else */
     transition: opacity 0.3s ease, visibility 0.3s ease;
 }
 
-/* Logic for immediate disappearance */
+/* Logic for instant disappearance */
 .cookie-overlay.hidden {
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
 }
 
-/* THE CARD - Matches your Pricing Card aesthetic */
+/* THE CARD - Sticking to your 20px radius and Inter font */
 .cookie-card {
     background: white;
     padding: 3rem;
     border-radius: 20px;
     width: 90%;
     max-width: 450px;
-    text-align: center;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
-    /* Reusing your animation */
-    animation: fadeInUp 0.5s ease-out; 
-}
-  .cookie-content {
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+    
+    /* Layout logic to keep the button centered and original size */
     display: flex;
     flex-direction: column;
-    gap: 15px;
-    align-items: center;
+    align-items: center; 
+    text-align: center;
+    
+    animation: fadeInUp 0.5s ease-out; 
 }
 
-/* Ensure the button is prominent */
-.cookie-actions {
-    margin-top: 20px;
+.cookie-card p {
+    margin-bottom: 2rem;
+    color: #333;
 }
+
+/* No changes needed to .button14big - it will now stay 128px wide */
