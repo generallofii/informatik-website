@@ -419,3 +419,49 @@ html {
         height: 50px;
     }
 }
+/* COOKIE POPUP STYLING */
+.cookie-popup {
+    position: fixed;
+    bottom: 30px;
+    left: 30px;
+    width: 400px;
+    background-color: white;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 15px 50px rgba(0,0,0,0.15);
+    z-index: 10001; /* Higher than back-to-top */
+    
+    /* Animation consistent with your pricing cards */
+    animation: fadeInUp 0.8s ease-out both;
+    display: flex;
+    flex-direction: column;
+}
+
+.cookie-content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.cookie-actions {
+    display: flex;
+    justify-content: flex-end;
+}
+
+/* Hide class for when user clicks accept */
+.cookie-popup.hidden {
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(20px);
+    transition: all 0.4s ease;
+}
+
+/* MOBILE RESPONSIVENESS */
+@media (max-width: 900px) {
+    .cookie-popup {
+        width: 85%;
+        left: 5%;
+        bottom: 20px;
+        padding: 20px;
+    }
+}
