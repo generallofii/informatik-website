@@ -66,6 +66,11 @@ img {
     font-family: "Inter", sans-serif;
 }
 /*button style class name button14*/
+.backContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+}
 .button14 {
     width: 64px;
     height: 32px;
