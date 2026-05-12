@@ -1,0 +1,66 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400&display=swap");
+html {
+    font-family: "Inter", sans-serif;
+}
+body {
+    width: 600px;
+    margin: 0 auto;
+    transition: 0.4s;
+    color: black;
+    background-color: #f5f5f5;
+    font-family: "Inter", sans-serif;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+h1 {
+    font-size: 40px;
+    font-weight: bold;
+    margin-top: 4px;
+    padding: 40px 40px 40px 40px;
+}
+
+h2 {
+    font-size: 25px;
+    line-height: 1.5;
+    padding: 0px 40px 0px 40px;
+}
+li {
+    font-size: 14px;
+    line-height: 1.5;
+    padding: 0px 40px 0px 40px;
+}
+pre {
+    font-size: 14px;
+    line-height: 1.5;
+}
+p {
+    font-size: 14px;
+    line-height: 1.5;
+    padding: 0px 40px 0px 40px;
+}
+tr {
+    font-size: 14px;
+    line-height: 1.5;
+    padding: 0px 40px 0px 40px;
+}
+a {
+    font-size: 14px;
+    line-height: 1.5;
+    padding: 0px 40px 0px 40px;
+}
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 40px 20px 40px 20px
+    align-self: end;
+    text-align: center;
+    color: #000;
+    cursor: pointer;
+    background-color: transparent;
+    border: 1px solid black;
+    border-radius: 2px;
+    font-size: 16px;
+    font-weight: 600;
+    box-shadow: rgba(0, 0, 0, 0.56) 0px 20px 60px 4px;
+    font-family: "Inter", sans-serif;
+}
