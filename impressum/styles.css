@@ -67,8 +67,8 @@ img {
 }
 /*button style class name button14*/
 .button14 {
-    width: 96px;
-    height: 48px;
+    width: 64px;
+    height: 32px;
     color: #fff;
     cursor: pointer;
     text-align: center;
@@ -81,7 +81,7 @@ img {
     font-optical-sizing: auto;
     font-weight: 300;
     font-style: bold;
-    font-size: 1.5rem;
+    font-size: 1rem;
     display: flex;
     justify-content: center;
     align-items: center; 
