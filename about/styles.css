@@ -3,7 +3,9 @@ body {
     font-family: Arial, sans-serif;
     padding-top: 70px; 
 }
-
+.landertext {
+    color: #ffffff;
+}
 .navbar {
     position: fixed;
     top: 0;
