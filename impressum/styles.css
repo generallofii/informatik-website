@@ -46,13 +46,12 @@ tr {
 a {
     font-size: 14px;
     line-height: 1.5;
-    padding: 0px 40px 0px 40px;
 }
 img {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    padding: 40px 20px 40px 20px
+    padding: 40px 20px 40px 20px;
     align-self: end;
     text-align: center;
     color: #000;
