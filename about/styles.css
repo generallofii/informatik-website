@@ -14,13 +14,17 @@ body {
     font-size: 26px;
     font-weight: 300;
     color: white;
-    margin-right: auto;
     font-family: Arial, sans-serif;
     letter-spacing: 1px;
 }
 
 /* NAVBAR */
 .navbar {
+    display: flex;
+
+    justify-content: space-between; /* logo links, links rechts */
+    align-items: center;
+
     position: fixed;
     top: 0;
     left: 0;
@@ -30,16 +34,25 @@ body {
 
     padding: 25px 40px;
 
-    display: flex;
-    align-items: center;
-
-    gap: 20px;
-
     background: #000;
 
     box-shadow: 0 4px 10px rgba(0,0,0,0.5);
 
     z-index: 1000;
+}
+
+/* NAV LINKS CONTAINER */
+.nav-links {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 20px;
+
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
 /* NAV LINKS */
