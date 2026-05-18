@@ -459,6 +459,3 @@ html, body {
   height: 100%;
   margin: 0;
 }
-section {
-  flex-shrink: 0; /* Prevents sections from squishing */
-}
