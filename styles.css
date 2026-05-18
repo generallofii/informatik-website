@@ -312,6 +312,7 @@ body {
     flex: 1;
     display: flex;
     justify-content: center;
+    min-width: 450px;
 }
 
 /* Perfect Square Images */
@@ -437,4 +438,15 @@ html {
     height: 450px;
     object-fit: cover;
     border-radius: 20px;
+}
+  @media (max-width: 900px) {
+    .feature-image-container {
+        min-width: 100%;
+    }
+    .featureimg {
+        width: 100%;
+        max-width: 450px;
+        height: auto; /* Switches to auto-height on mobile so it stays responsive */
+        aspect-ratio: 1 / 1; /* Forces it to remain a perfect square */
+    }
 }
