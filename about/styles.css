@@ -2,7 +2,11 @@ body {
     margin: 0;
     font-family: Arial, sans-serif;
     padding-top: 70px;
-    background: #000;
+    background: white;
+}
+
+.landertext {
+    color: #ffffff;
 }
 
 /* LOGO */
@@ -13,10 +17,6 @@ body {
     margin-right: auto;
     font-family: Arial, sans-serif;
     letter-spacing: 1px;
-}
-
-.landertext {
-    color: #ffffff;
 }
 
 /* NAVBAR */
@@ -64,7 +64,7 @@ body {
     box-shadow: 0 5px 15px rgba(30,144,255,0.4);
 }
 
-/* ACTIVE CLICK */
+/* CLICK */
 .navbar a:active {
     transform: scale(0.95);
     background: #0066ff;
@@ -122,12 +122,10 @@ body {
 p {
     font-size: 18px;
     line-height: 1.6;
-    color: white;
 }
 
 h2 {
     margin-top: 40px;
-    color: white;
 }
 
 /* SOCIALS */
@@ -171,6 +169,5 @@ h2 {
 /* FOOTER */
 footer {
     text-align: center;
-    color: white;
     padding: 20px;
 }
