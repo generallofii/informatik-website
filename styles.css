@@ -433,11 +433,11 @@ html {
         height: 50px;
     }
 }
-.featureimg {
-    width: 450px;
-    height: 450px;
+img.featureimg {
+    width: 450px !important;
+    height: 450px !important;
     object-fit: contain;
-    border-radius: 20px;
+    max-width: 100%;
 }
   @media (max-width: 900px) {
     .feature-image-container {
