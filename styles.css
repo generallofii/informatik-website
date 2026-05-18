@@ -176,6 +176,7 @@ body {
   align-items: center;
   min-height: 100vh; /* Centers the section on the screen */
   background-color: #f4f7f6;
+  width: 100%;
 }
 
 .pricing-container {
@@ -184,6 +185,7 @@ body {
   width: 90%;
   max-width: 1200px;
   align-items: stretch; /* Ensures all cards match height */
+  margin: 0 auto;
 }
 
 .pricing-card {
