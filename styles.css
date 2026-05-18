@@ -436,7 +436,7 @@ html {
 .featureimg {
     width: 450px;
     height: 450px;
-    object-fit: cover;
+    object-fit: contain;
     border-radius: 20px;
 }
   @media (max-width: 900px) {
