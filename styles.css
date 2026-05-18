@@ -433,7 +433,6 @@ html {
     }
 }
 .featureimg {
-    width: 100%;
-    max-width: 450px;
-    aspect-ratio: 1 / 1;
+    width: 450px;
+    height: 450px;
 }
