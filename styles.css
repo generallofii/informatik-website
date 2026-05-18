@@ -455,7 +455,4 @@ img.featureimg {
         aspect-ratio: 1 / 1; /* Forces it to remain a perfect square */
     }
 }
-html, body {
-  height: 100%;
-  margin: 0;
-}
+
