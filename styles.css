@@ -435,7 +435,7 @@ html {
     }
 }
 img.featureimg {
-    width: 450px !important;
+    width: 800px !important;
     height: 450px !important;
     object-fit: cover;
     max-width: 100%;
