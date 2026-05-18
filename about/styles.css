@@ -1,4 +1,29 @@
 body {
+    .navbar {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background-color: #111;
+    padding: 15px 30px;
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: bold;
+    color: #00bfff;
+    margin-right: auto;
+    font-family: Arial, sans-serif;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.navbar a:hover {
+    color: #00bfff;
+}
     margin: 0;
     font-family: Arial, sans-serif;
     padding-top: 70px; 
