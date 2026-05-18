@@ -1,36 +1,25 @@
 body {
-    .navbar {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    background-color: #111;
-    padding: 15px 30px;
-}
-
-.logo {
-    font-size: 28px;
-    font-weight: bold;
-    color: #00bfff;
-    margin-right: auto;
-    font-family: Arial, sans-serif;
-}
-
-.navbar a {
-    color: white;
-    text-decoration: none;
-    font-size: 18px;
-}
-
-.navbar a:hover {
-    color: #00bfff;
-}
     margin: 0;
     font-family: Arial, sans-serif;
-    padding-top: 70px; 
+    padding-top: 70px;
+    background: #000;
 }
+
+/* LOGO */
+.logo {
+    font-size: 26px;
+    font-weight: 300;
+    color: white;
+    margin-right: auto;
+    font-family: Arial, sans-serif;
+    letter-spacing: 1px;
+}
+
 .landertext {
     color: #ffffff;
 }
+
+/* NAVBAR */
 .navbar {
     position: fixed;
     top: 0;
@@ -42,7 +31,6 @@ body {
     padding: 25px 40px;
 
     display: flex;
-    justify-content: flex-end;
     align-items: center;
 
     gap: 20px;
@@ -54,7 +42,7 @@ body {
     z-index: 1000;
 }
 
-
+/* NAV LINKS */
 .navbar a {
     color: white;
     text-decoration: none;
@@ -69,24 +57,25 @@ body {
     transition: all 0.25s ease;
 }
 
-
+/* HOVER */
 .navbar a:hover {
     background: #1e90ff;
     transform: translateY(-2px);
     box-shadow: 0 5px 15px rgba(30,144,255,0.4);
 }
 
-/* Beim Klicken */
+/* ACTIVE CLICK */
 .navbar a:active {
     transform: scale(0.95);
     background: #0066ff;
 }
 
-/* Aktive Seite */
+/* ACTIVE PAGE */
 .navbar a.active {
     background: #1e90ff;
     box-shadow: 0 5px 15px rgba(30,144,255,0.5);
 }
+
 /* HERO */
 .top {
     position: relative;
@@ -106,6 +95,7 @@ body {
     background: rgba(0,0,0,0.4);
 }
 
+/* HERO TEXT */
 .overlay {
     position: absolute;
     top: 50%;
@@ -132,12 +122,15 @@ body {
 p {
     font-size: 18px;
     line-height: 1.6;
+    color: white;
 }
 
 h2 {
     margin-top: 40px;
+    color: white;
 }
 
+/* SOCIALS */
 .socials {
     display: flex;
     justify-content: center;
@@ -145,7 +138,6 @@ h2 {
 
     margin-top: 40px;
 }
-
 
 .socials a {
     width: 60px;
@@ -168,7 +160,6 @@ h2 {
     box-shadow: 0 5px 15px rgba(0,0,0,0.3);
 }
 
-
 .socials a:hover {
     background: #1e90ff;
 
@@ -176,6 +167,10 @@ h2 {
 
     box-shadow: 0 0 20px #1e90ff;
 }
+
+/* FOOTER */
 footer {
     text-align: center;
+    color: white;
+    padding: 20px;
 }
