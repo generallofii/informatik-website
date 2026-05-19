@@ -54,52 +54,34 @@ body {
 }
 
 /* NAV LINKS */
+/* NAVBAR */
+.navbar {
+  display: flex;
+  justify-content: space-between; /* pushes logo left, links right */
+  align-items: center;            /* vertically center */
+  padding: 1rem 1rem;
+  background: black;
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
 .nav-links {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    gap: 1rem;
-
-    list-style: none;
-
-    font-family: "Inter", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 500;
-
-    /* FIX: vorher 2rem → war der Fehler */
-    font-size: 1rem;
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: bold;
+  font-size: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+  gap: 2rem;      /* space between items */
+  list-style: none;
+  list-style-type: none; /* Removes the bullet points */
+  margin: 0;             /* Removes default browser margins */
+  padding: 0;            /* Removes default browser padding */
 }
-
-/* NAVBAR LINKS */
-.navbar a {
-    color: white;
-    text-decoration: none;
-
-    padding: 4px 8px;   /* kleiner gemacht */
-    border-radius: 8px;
-
-    background: rgba(255,255,255,0.05);
-
-    font-weight: 500;
-    font-size: 0.9rem;  /* FIX: sorgt für echte Größe */
-
-    transition: all 0.25s ease;
-}
-
-/* HOVER */
-.navbar a:hover {
-    background: #1e90ff;
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(30,144,255,0.4);
-}
-
-/* CLICK */
-.navbar a:active {
-    transform: scale(0.95);
-    background: #0066ff;
-}
-
 /* BUTTON SMALL */
 .button14 {
     width: 96px;
