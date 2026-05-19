@@ -21,38 +21,40 @@ body {
 /* NAVBAR */
 .navbar {
     display: flex;
-
-    justify-content: space-between; /* logo links, links rechts */
+    justify-content: space-between; /* Logo links, Links rechts */
     align-items: center;
 
-    position: fixed;
+    position: sticky;
     top: 0;
-    left: 0;
+    z-index: 1000;
 
     width: 100%;
     box-sizing: border-box;
 
-    padding: 25px 40px;
+    padding: 1rem 1rem;
 
-    background: #000;
+    background: black;
+    color: white;
 
     box-shadow: 0 4px 10px rgba(0,0,0,0.5);
-
-    z-index: 1000;
 }
 
-/* NAV LINKS CONTAINER */
+/* NAV LINKS */
 .nav-links {
     display: flex;
-
     justify-content: center;
     align-items: center;
 
-    gap: 20px;
+    gap: 2rem;
 
     list-style: none;
     margin: 0;
     padding: 0;
+
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-size: 2rem;
 }
 
 /* NAV LINKS */
