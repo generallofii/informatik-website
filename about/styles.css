@@ -66,7 +66,9 @@ body {
     font-family: "Inter", sans-serif;
     font-optical-sizing: auto;
     font-weight: 500;
-    font-size: 2rem;
+
+    /* FIX: vorher 2rem → war der Fehler */
+    font-size: 1rem;
 }
 
 /* NAVBAR LINKS */
@@ -74,12 +76,13 @@ body {
     color: white;
     text-decoration: none;
 
-    padding:  5px 10px;
-    border-radius: 10px;
+    padding: 4px 8px;   /* kleiner gemacht */
+    border-radius: 8px;
 
     background: rgba(255,255,255,0.05);
 
-    font-weight: 600;
+    font-weight: 500;
+    font-size: 0.9rem;  /* FIX: sorgt für echte Größe */
 
     transition: all 0.25s ease;
 }
@@ -115,7 +118,6 @@ body {
     transition: all 0.3s ease 0s;
 
     font-family: "Inter", sans-serif;
-    font-optical-sizing: auto;
     font-weight: 300;
     font-size: 1.5rem;
 
@@ -127,7 +129,6 @@ body {
 .button14:hover {
     background-color: #3838ff;
     color: #fff;
-
     transform: translateY(-7px);
 }
 
@@ -153,7 +154,6 @@ body {
     transition: all 0.3s ease 0s;
 
     font-family: "Inter", sans-serif;
-    font-optical-sizing: auto;
     font-weight: 300;
     font-size: 1rem;
 
@@ -165,7 +165,6 @@ body {
 .button14big:hover {
     background-color: #3838ff;
     color: #fff;
-
     transform: translateY(-7px);
 }
 
@@ -263,9 +262,7 @@ h2 {
 
 .socials a:hover {
     background: #1e90ff;
-
     transform: translateY(-5px) scale(1.1);
-
     box-shadow: 0 0 20px #1e90ff;
 }
 
