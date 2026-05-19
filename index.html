@@ -44,7 +44,7 @@ cookieconsent.run({"notice_banner_type":"simple","consent_type":"express","palet
       <p class="text" style="color: #333; text-align: left; display: block;">
         Brechen Sie Silos auf und setzen Sie den wahren Wert Ihrer digitalen Assets frei. Erleben Sie nahtlose Integration über alle Vertikalen hinweg und verwandeln Sie fragmentierte Inputs in einen vereinheitlichten Stream von Handlungs-Velocity.
       </p>
-      <button class="button14big">Learn More</button>
+      <button class="button14big" data-text="Besuchen sie uns bei CES 2130" onclick="openPopup(this)">Learn More</button>
     </div>
     <div class="feature-image-container">
       <img src="/1stthing.png" alt="fluide daten" class="featureimg">
@@ -58,7 +58,7 @@ cookieconsent.run({"notice_banner_type":"simple","consent_type":"express","palet
       <p class="text" style="color: #333; text-align: left; display: block;">
         Nutzen Sie die Kraft der funktionsübergreifenden Ausrichtung. Unsere geschützte Engine schließt die Lücke zwischen Potenzial und Performance und stellt sicher, dass jeder Touchpoint für maximale Wirkung optimiert ist.
       </p>
-      <button class="button14big">Demo</button>
+      <button class="button14big" data-text="Besuchen sie uns bei CES 2130" onclick="openPopup(this)">Demo</button>
     </div>
     <div class="feature-image-container">
       <img src="/cloud.png" alt="ISEC(tm)" class="featureimg">
@@ -72,7 +72,7 @@ cookieconsent.run({"notice_banner_type":"simple","consent_type":"express","palet
       <p class="text" style="color: #333; text-align: left; display: block;">
         Skalieren Sie mit Zuversicht. Das modulare Framework von Digitify passt sich Ihren sich entwickelnden Anforderungen an und bietet ein robustes Fundament, das mit Ihrer Vision wächst – ohne die Reibungsverluste traditioneller Systeme.
       </p>
-      <button class="button14big">View Demo</button>
+      <button class="button14big" data-text="Besuchen sie uns bei CES 2130" onclick="openPopup(this)">View Demo</button>
     </div>
     <div class="feature-image-container">
       <img src="/dynarch.png" alt="Dynamische Loesungsarchitektur" class="featureimg">
@@ -93,7 +93,7 @@ cookieconsent.run({"notice_banner_type":"simple","consent_type":"express","palet
         <li>10GB Storage</li>
         <li>Email Support</li>
       </ul>
-      <button class="button14big">Get Started</button>
+      <button class="button14big" data-text="Besuchen sie uns bei CES 2130" onclick="openPopup(this)">Get Started</button>
     </div>
 
     <!-- Pro Plan (Centered/Featured) -->
@@ -107,7 +107,7 @@ cookieconsent.run({"notice_banner_type":"simple","consent_type":"express","palet
         <li>Unlimited Storage</li>
         <li>24/7 Priority Support</li>
       </ul>
-      <button class="button14big">Start Free Trial</button>
+      <button class="button14big" data-text="Besuchen sie uns bei CES 2130" onclick="openPopup(this)">Start Free Trial</button>
     </div>
 
     <!-- Enterprise Plan -->
@@ -120,7 +120,7 @@ cookieconsent.run({"notice_banner_type":"simple","consent_type":"express","palet
         <li>Dedicated Manager</li>
         <li>Advanced Analytics</li>
       </ul>
-      <button class="button14big">Contact Sales</button>
+      <button class="button14big" data-text="Besuchen sie uns bei CES 2130" onclick="openPopup(this)">Contact Sales</button>
     </div>
 <br><br>
       </div>
@@ -132,14 +132,13 @@ cookieconsent.run({"notice_banner_type":"simple","consent_type":"express","palet
         </p>
     </section>
 
-    <!-- THE BUBBLE BUTTON (Place this last) -->
+    <!-- THE BUBBLE BUTTON -->
     <a href="#" class="back-to-top" id="backToTop">
       <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
         <path d="M18 15l-6-6-6 6"/>
       </svg>
     </a>
 
-    <!-- THE SCRIPT (Crucial for Smooth Scroll + Reveal) -->
     <script>
       const btn = document.getElementById("backToTop");
 
@@ -156,7 +155,7 @@ cookieconsent.run({"notice_banner_type":"simple","consent_type":"express","palet
         }
       };
 
-      // JS Backup to ensure smooth scroll isn't "instant"
+      // JS Backup 
       btn.addEventListener("click", function(e) {
         e.preventDefault();
         window.scrollTo({
@@ -165,5 +164,15 @@ cookieconsent.run({"notice_banner_type":"simple","consent_type":"express","palet
         });
       });
     </script>
+    <!-- THE POPUP MODAL -->
+<div id="customPopup" class="popup-overlay" onclick="closePopup(event)">
+    <div class="popup-content">
+        <!-- Close Button (X) -->
+        <span class="popup-close" onclick="closePopup(event)">&times;</span>
+        
+        <!-- Reusable Text Area -->
+        <p id="popupText">Sample placeholder text...</p>
+    </div>
+</div>
   </body>
 </html>
