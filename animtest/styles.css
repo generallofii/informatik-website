@@ -28,12 +28,12 @@ html.lenis, html.lenis body {
 }
 
 /* ==========================================================================
-   2. Sequential Track Viewports
+   2. Sequential Track Viewports (Full-Screen Edge-to-Edge)
    ========================================================================== */
 .video-track {
   position: relative;
-  width: 100%;
-  height: 100vh;
+  width: 100vw;       /* Spans across full monitor width */
+  height: 100vh;      /* Spans across full monitor height */
 }
 
 .sticky-viewport {
@@ -43,7 +43,7 @@ html.lenis, html.lenis body {
   display: flex;
   justify-content: center;
   align-items: center;
-  overflow: hidden;
+  overflow: hidden;   /* Hides any outer-edge video overflow cleanly */
 }
 
 .video-wrapper {
@@ -58,7 +58,14 @@ html.lenis, html.lenis body {
 .scrub-video {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  
+  /* 
+     CRITICAL ACTION: Acts like background-size: cover.
+     Scales the video element up dynamically to completely fill the screen,
+     cropping edges symmetrically without stretching or distorting your pixels.
+  */
+  object-fit: cover; 
+  object-position: center center; /* Keeps your hardware object centered perfectly */
   pointer-events: none;
 }
 
