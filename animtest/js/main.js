@@ -23,6 +23,9 @@ document.addEventListener("DOMContentLoaded", () => {
   let v1Data = { frame: 0 };
   let v2Data = { frame: 0 };
 
+  // Set the initial position of Video 2 cleanly below the viewport frame
+  gsap.set(vid2, { translateY: "100%" });
+
   // Wait for both video assets to confirm metadata parameters are loaded
   Promise.all([
     new Promise(res => vid1.readyState >= 2 ? res() : vid1.addEventListener("loadedmetadata", res)),
@@ -37,7 +40,7 @@ document.addEventListener("DOMContentLoaded", () => {
       scrollTrigger: {
         trigger: ".video-track",
         start: "top top",
-        end: "+=6000",          /* Deepened scroll workspace to allow room for two clips */
+        end: "+=6000", /* Deep scroll distance ensures clear frame interpolation space */
         scrub: true,
         pin: ".sticky-viewport",
         anticipatePin: 1
@@ -56,23 +59,31 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Fade primary text slightly out as video 1 progresses
     mainTimeline.to(title, {
-      opacity: 0.3,
-      scale: 0.95,
+      opacity: 0,
+      scale: 0.9,
       duration: 1.5
     }, "0");
 
-    // --- PHASE 2: The Handshake (Cut to Video 2) ---
-    mainTimeline.add(() => {
-      // Toggles visibility forward or backward seamlessly based on scroll direction
-      vid1.classList.toggle("active");
-      vid2.classList.toggle("active");
+    // --- PHASE 2: The Transition Transition (Bring Video 2 into view) ---
+    // This physically moves Video 2 up over Video 1, exactly like a sliding drawer
+    mainTimeline.to(vid2, {
+      translateY: "0%",
+      duration: 1.5,
+      ease: "power2.inOut",
+      onStart: () => { 
+        title.innerHTML = "Pro power. Pro display."; 
+      },
+      onReverseComplete: () => { 
+        title.innerHTML = "The future unfolds."; 
+      }
     });
 
-    // Dynamically change text string at the moment of the handoff
+    // Fade the new title block into focus during the slide transition
     mainTimeline.to(title, {
-      onStart: () => { title.innerHTML = "Pro power. Pro display."; },
-      onReverseComplete: () => { title.innerHTML = "The future unfolds."; }
-    });
+      opacity: 1,
+      scale: 1,
+      duration: 1
+    }, "-=0.7");
 
     // --- PHASE 3: Scrub Video 2 ---
     mainTimeline.to(v2Data, {
@@ -84,11 +95,11 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
 
-    // Fully blend text and contract scale during final video playhead tracks
+    // Fully blend text away during final scroll layout tracks
     mainTimeline.to(title, {
       opacity: 0,
       scale: 0.8,
       duration: 1.5
-    }, "-=1.5");
+    }, "-=1");
   }
 });
