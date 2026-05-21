@@ -57,33 +57,34 @@ html.lenis body {
 /* Keep all previous styles intact, replace/update section 4 & 5 with these: */
 
 /* ==========================================================================
-   4. Video Wrapper & Stack Handling
+   4. Video Wrapper & Stack Handling (Fixed Stacking)
    ========================================================================== */
 .video-wrapper {
   position: relative;
   width: 100%;
-  height: 100vh;
+  height: 100vh;   /* Forces the parent to occupy the full screen */
+  overflow: hidden;
   z-index: 1;
 }
 
-/* Stacks the videos directly on top of each other */
+/* Stacks the videos directly on top of each other at identical 0,0 coordinates */
 .scrub-video {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: cover; /* Keeps aspect ratios clean without distorting framework dimensions */
   pointer-events: none;
-  opacity: 0;               /* Hidden by default */
-  visibility: hidden;
-  transition: opacity 0.3s ease; /* Smooth seamless cut blending */
+  
+  /* Use immediate opacity toggle without display visibility conflicts */
+  opacity: 0;               
+  will-change: opacity; /* Optimizes GPU layer swapping */
 }
 
-/* Modifier class to bring the active video into view */
+/* The active modifier layer */
 .scrub-video.active {
   opacity: 1;
-  visibility: visible;
 }
 
 /* ==========================================================================
