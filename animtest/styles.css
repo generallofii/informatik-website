@@ -54,24 +54,36 @@ html.lenis body {
   align-items: center;
 }
 
+/* Keep all previous styles intact, replace/update section 4 & 5 with these: */
+
 /* ==========================================================================
-   4. Video Wrapper & Asset Handling
+   4. Video Wrapper & Stack Handling
    ========================================================================== */
 .video-wrapper {
   position: relative;
   width: 100%;
   height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   z-index: 1;
 }
 
-.video-wrapper video {
+/* Stacks the videos directly on top of each other */
+.scrub-video {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Spans full background framework seamlessly */
+  object-fit: cover;
   pointer-events: none;
+  opacity: 0;               /* Hidden by default */
+  visibility: hidden;
+  transition: opacity 0.3s ease; /* Smooth seamless cut blending */
+}
+
+/* Modifier class to bring the active video into view */
+.scrub-video.active {
+  opacity: 1;
+  visibility: visible;
 }
 
 /* ==========================================================================
@@ -98,11 +110,8 @@ html.lenis body {
   background: linear-gradient(180deg, #ffffff 0%, #a1a1a6 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  transform: scale(1);
-  opacity: 1;
   will-change: transform, opacity;
 }
-
 /* ==========================================================================
    6. Flow/Spacer Sections
    ========================================================================== */
