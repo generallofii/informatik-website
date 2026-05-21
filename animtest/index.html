@@ -3,47 +3,37 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>iPhone Ultra - Minimalist Landing Page</title>
-<link rel="stylesheet" href="styles.css">
+  <title>iPhone Ultra - Video Scroll Scrubber</title>
   
-  <!-- GSAP Core and ScrollTrigger Drivers -->
+  <link rel="stylesheet" href="/animtest/style.css">
+  
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
-  <!-- Lenis Library for smooth frame easing -->
   <script src="https://unpkg.com/lenis@1.1.20/dist/lenis.min.js" defer></script>
-  <!-- Custom Execution Logic -->
   <script src="/animtest/js/main.js" defer></script>
 </head>
 <body>
 
   <div class="scroll-container">
     
-    <!-- Animated Section -->
-    <section class="animation-track">
+    <section class="video-track">
       <div class="sticky-viewport">
         
-        <!-- The hardware component that scales to full frame -->
-        <div class="hardware-canvas">
-          <div class="hardware-core"></div>
+        <div class="video-wrapper">
+          <video id="scrub-video" src="hardware.mp4" playsinline muted preload="auto"></video>
         </div>
 
-        <!-- Changing Text Elements -->
         <div class="text-overlay">
-          <h1 class="hero-title">
-            <span>Titanium.</span>
-            <span>Down to the pixel.</span>
-          </h1>
-          <h1 class="sub-features">Designed to be consumed.</h1>
+          <h1 class="scroll-title">The future unfolds.</h1>
         </div>
 
       </div>
     </section>
 
-    <!-- Normal Content Section (Confirms smooth scroll transition) -->
-    <section class="content-footer">
-      <div class="footer-wrapper">
-        <h2>A massive leap in performance.</h2>
-        <p>By syncing hardware updates perfectly with native browser rendering pipelines, interaction lag drops to absolute zero. Every scroll step feels immediate, weighted, and structurally deliberate.</p>
+    <section class="spacer-section">
+      <div class="spacer-content">
+        <h2>Pro Camera System.</h2>
+        <p>Our most advanced video performance engine ever designed for the web layout.</p>
       </div>
     </section>
 
