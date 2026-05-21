@@ -10,87 +10,60 @@
 body {
   background-color: #000000;
   color: #f5f5f7;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
 }
 
-/* ==========================================================================
-   2. Lenis Smooth Scroll Structural Constraints
-   ========================================================================== */
-html.lenis, 
-html.lenis body {
+html.lenis, html.lenis body {
   height: auto;
 }
-
 .lenis-smooth {
   scroll-behavior: auto !important;
 }
 
-/* ==========================================================================
-   3. Main Structural Containers
-   ========================================================================== */
 .scroll-container {
   width: 100%;
   position: relative;
 }
 
-/* Video Section Pinning Track */
+/* ==========================================================================
+   2. Sequential Track Viewports
+   ========================================================================== */
 .video-track {
   position: relative;
   width: 100%;
   height: 100vh;
-  overflow: hidden;
 }
 
 .sticky-viewport {
-  position: absolute;
-  top: 0;
-  left: 0;
+  position: relative;
   width: 100%;
-  height: 100vh;
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-/* ==========================================================================
-   4. Video Wrapper & Stack Handling (Fixed Viewport Clamping)
-   ========================================================================== */
-.video-wrapper {
-  position: relative;
-  width: 100%;
-  height: 100vh;
   overflow: hidden;
-  z-index: 1;
 }
 
-/* 
-   FIX: Remove position absolute from the base style. 
-   We want them layered properly inside the pinned viewport container.
-*/
-.scrub-video {
+.video-wrapper {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  pointer-events: none;
-  
-  /* Start Video 2 out of frame vertically instead of hidden below the page */
-  transform: translateY(0%);
-  opacity: 1; 
-  visibility: visible;
-  will-change: transform;
+  z-index: 1;
 }
 
-/* 
-   We no longer use a raw opacity toggle. 
-   We will use GSAP transforms to physically slide or blend them.
-*/
+.scrub-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
+}
+
 /* ==========================================================================
-   5. Interactive Typography Overlays
+   3. Typography & Spacers
    ========================================================================== */
 .text-overlay {
   position: absolute;
@@ -115,9 +88,7 @@ html.lenis body {
   -webkit-text-fill-color: transparent;
   will-change: transform, opacity;
 }
-/* ==========================================================================
-   6. Flow/Spacer Sections
-   ========================================================================== */
+
 .spacer-section {
   width: 100%;
   min-height: 100vh;
@@ -136,13 +107,10 @@ html.lenis body {
 
 .spacer-content h2 {
   font-size: clamp(2rem, 4vw, 3.5rem);
-  font-weight: 600;
-  letter-spacing: -0.015em;
   margin-bottom: 20px;
 }
 
 .spacer-content p {
   font-size: 1.25rem;
-  line-height: 1.5;
   color: #86868b;
 }
