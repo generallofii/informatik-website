@@ -3,10 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>iPhone Ultra - Video Scroll Scrubber</title>
+  <title>iPhone Ultra - Multi-Video Scrubber Sequence</title>
   
-  <link rel="stylesheet" href="/animtest/styles.css">
+  <link rel="stylesheet" href="/animtest/css/style.css">
   
+  <!-- CDNS for Libraries -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
   <script src="https://unpkg.com/lenis@1.1.20/dist/lenis.min.js" defer></script>
@@ -19,12 +20,16 @@
     <section class="video-track">
       <div class="sticky-viewport">
         
+        <!-- Absolute Stack Container -->
         <div class="video-wrapper">
-          <video id="scrub-video" src="hardware.mp4" playsinline muted preload="auto"></video>
+          <!-- Video 1: Initial Animation Sequence -->
+          <video id="video-1" class="scrub-video active" src="hardware_intro.mp4" playsinline muted preload="auto"></video>
+          <!-- Video 2: Secondary Animation Sequence -->
+          <video id="video-2" class="scrub-video" src="hardware_details.mp4" playsinline muted preload="auto"></video>
         </div>
 
         <div class="text-overlay">
-          <h1 class="scroll-title">The future unfolds.</h1>
+          <h1 id="dynamic-title" class="scroll-title">The future unfolds.</h1>
         </div>
 
       </div>
