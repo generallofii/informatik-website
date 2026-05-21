@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>iPhone Ultra - Multi-Video Scrubber Sequence</title>
+  <title>iPhone Ultra - Sequential Video Track System</title>
   
   <link rel="stylesheet" href="/animtest/css/style.css">
   
@@ -17,24 +17,31 @@
 
   <div class="scroll-container">
     
-    <section class="video-track">
+    <!-- FIRST VIDEO TIMELINE BLOCK -->
+    <section id="track-1" class="video-track">
       <div class="sticky-viewport">
-        
-        <!-- Absolute Stack Container -->
         <div class="video-wrapper">
-          <!-- Video 1: Initial Animation Sequence -->
-          <video id="video-1" class="scrub-video active" src="large.mp4" playsinline muted preload="auto"></video>
-          <!-- Video 2: Secondary Animation Sequence -->
-          <video id="video-2" class="scrub-video" src="large2.mp4" playsinline muted preload="auto"></video>
+          <video id="video-1" class="scrub-video" src="large2.mp4" playsinline muted preload="auto"></video>
         </div>
-
         <div class="text-overlay">
-          <h1 id="dynamic-title" class="scroll-title">The future unfolds.</h1>
+          <h1 class="scroll-title">The future unfolds.</h1>
         </div>
-
       </div>
     </section>
 
+    <!-- SECOND VIDEO TIMELINE BLOCK -->
+    <section id="track-2" class="video-track">
+      <div class="sticky-viewport">
+        <div class="video-wrapper">
+          <video id="video-2" class="scrub-video" src="large.mp4" playsinline muted preload="auto"></video>
+        </div>
+        <div class="text-overlay">
+          <h1 class="scroll-title">Pro power. Pro display.</h1>
+        </div>
+      </div>
+    </section>
+
+    <!-- FLOW CONTENT FOOTER -->
     <section class="spacer-section">
       <div class="spacer-content">
         <h2>Pro Camera System.</h2>
