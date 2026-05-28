@@ -1,15 +1,25 @@
 <!DOCTYPE html>
+
 <html lang="de">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Digitify - About Us</title>
 
 <link rel="stylesheet"
 href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-<title>Digitify - About Us</title>
-
 <style>
+
+:root{
+    --blue:#2563eb;
+    --blue2:#3b82f6;
+    --text:#111827;
+    --gray:#4b5563;
+    --glass:rgba(255,255,255,.7);
+}
 
 *{
     margin:0;
@@ -18,62 +28,73 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
 }
 
 body{
-    font-family: Arial, sans-serif;
+    font-family:Arial,sans-serif;
+    color:var(--text);
+
     background:
     linear-gradient(
     135deg,
-    #f8fafc 0%,
+    #f8fafc,
     #eff6ff 40%,
-    #dbeafe 100%
+    #dbeafe
     );
-    color:#111827;
+}
+
+img{
+    max-width:100%;
+    display:block;
 }
 
 /* NAVBAR */
 
 .navbar{
-    width:100%;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:25px 70px;
     position:fixed;
     top:0;
     z-index:1000;
 
-    background:rgba(255,255,255,0.7);
+    width:100%;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:25px 70px;
+
+    background:var(--glass);
     backdrop-filter:blur(12px);
-    border-bottom:1px solid rgba(255,255,255,0.3);
+
+    border-bottom:
+    1px solid rgba(255,255,255,.3);
 }
 
 .logo{
     font-size:28px;
     font-weight:bold;
-    color:#2563eb;
+    color:var(--blue);
 }
 
 .nav-links{
     display:flex;
-    list-style:none;
     gap:20px;
+    list-style:none;
 }
 
-.button14{
+.nav-links a{
     text-decoration:none;
-    color:#111827;
+    color:var(--text);
     font-weight:bold;
-    transition:0.3s ease;
+    transition:.3s;
 }
 
-.button14:hover{
-    color:#2563eb;
+.nav-links a:hover{
+    color:var(--blue);
 }
 
 /* HERO */
 
 .top{
-    height:100vh;
     position:relative;
+    height:100vh;
     overflow:hidden;
 }
 
@@ -81,31 +102,31 @@ body{
     width:100%;
     height:100%;
     object-fit:cover;
-    filter:brightness(0.5);
+    filter:brightness(.5);
 }
 
 .overlay{
     position:absolute;
     top:50%;
     left:50%;
+
     transform:translate(-50%,-50%);
+
+    width:90%;
     text-align:center;
     color:white;
-    width:90%;
-}
-
-.landertext{
-    animation:fadeUp 1s ease;
 }
 
 .overlay h1{
     font-size:clamp(50px,10vw,90px);
     margin-bottom:20px;
+    animation:fadeUp 1s ease;
 }
 
 .overlay p{
     font-size:clamp(18px,3vw,28px);
     line-height:1.6;
+    animation:fadeUp 1s ease;
 }
 
 /* CONTENT */
@@ -123,73 +144,87 @@ body{
 }
 
 .bottom h2{
+    margin:70px 0 25px;
     font-size:38px;
-    margin-top:70px;
-    margin-bottom:25px;
-    color:#111827;
 }
 
 .bottom p{
+    margin-bottom:25px;
+
     font-size:19px;
     line-height:1.9;
-    color:#4b5563;
-    margin-bottom:25px;
+
+    color:var(--gray);
 }
 
-/* IMAGE */
-
-.bottom img{
-    border-radius:24px;
-    box-shadow:0 15px 40px rgba(0,0,0,0.15);
-}
-
-/* GLASS CARDS */
+/* CARDS */
 
 .info-card{
-    background:rgba(255,255,255,0.7);
-    backdrop-filter:blur(10px);
-
+    margin:35px 0;
     padding:35px;
+
     border-radius:24px;
 
-    margin:35px 0;
+    background:var(--glass);
+    backdrop-filter:blur(10px);
 
     box-shadow:
-    0 10px 30px rgba(0,0,0,0.08);
+    0 10px 30px rgba(0,0,0,.08);
 
-    transition:0.35s ease;
+    transition:.35s;
 }
 
 .info-card:hover{
     transform:translateY(-8px);
+
     box-shadow:
-    0 15px 40px rgba(0,0,0,0.12);
+    0 15px 40px rgba(0,0,0,.12);
+}
+
+/* IMAGE */
+
+.image-box{
+    margin:50px 0;
+    display:flex;
+    justify-content:flex-end;
+}
+
+.image-box img{
+    width:350px;
+
+    border-radius:24px;
+
+    box-shadow:
+    0 15px 40px rgba(0,0,0,.15);
 }
 
 /* BUTTON */
 
 .learn-btn{
     display:inline-block;
+
     margin-top:50px;
     padding:16px 38px;
+
+    border-radius:14px;
 
     background:
     linear-gradient(
     135deg,
-    #2563eb,
-    #3b82f6
+    var(--blue),
+    var(--blue2)
     );
 
     color:white;
     text-decoration:none;
-    border-radius:14px;
+
     font-size:18px;
     font-weight:bold;
 
-    transition:0.3s ease;
+    transition:.3s;
 
     box-shadow:
-    0 10px 25px rgba(37,99,235,0.3);
+    0 10px 25px rgba(37,99,235,.3);
 }
 
 .learn-btn:hover{
@@ -199,15 +234,16 @@ body{
 /* FOOTER */
 
 footer{
+    margin-top:80px;
     padding:50px 20px;
+
     text-align:center;
     background:white;
-    margin-top:80px;
 }
 
 footer a{
     text-decoration:none;
-    color:#2563eb;
+    color:var(--blue);
     font-weight:bold;
 }
 
@@ -217,13 +253,15 @@ footer a{
 
 .socials a{
     margin:0 10px;
+
     font-size:24px;
-    color:#111827;
-    transition:0.3s ease;
+    color:var(--text);
+
+    transition:.3s;
 }
 
 .socials a:hover{
-    color:#2563eb;
+    color:var(--blue);
     transform:translateY(-3px);
 }
 
@@ -270,13 +308,17 @@ footer a{
         font-size:17px;
     }
 
-    .bottom img{
-        width:100%;
+    .image-box{
+        justify-content:center;
     }
 
+    .image-box img{
+        width:100%;
+    }
 }
 
 </style>
+
 </head>
 
 <body>
@@ -286,9 +328,9 @@ footer a{
 <div class="logo">Digitify</div>
 
 <ul class="nav-links">
-<li><a class="button14" href="/index.html">Home</a></li>
-<li><a class="button14" href="/index.html#pricing">Pricing</a></li>
-<li><a class="button14" href="index.html">About</a></li>
+<li><a href="/index.html">Home</a></li>
+<li><a href="/index.html#pricing">Pricing</a></li>
+<li><a href="index.html">About</a></li>
 </ul>
 
 </nav>
@@ -299,9 +341,9 @@ footer a{
 
 <div class="overlay">
 
-<h1 class="landertext">Digitify</h1>
+<h1>Digitify</h1>
 
-<p class="landertext">
+<p>
 Digitale Lösungen für moderne Unternehmen
 </p>
 
@@ -316,9 +358,8 @@ Digitale Lösungen für moderne Unternehmen
 <div class="info-card">
 
 <p>
-Wir sind ein leidenschaftliches Team aus kreativen Köpfen und Strategen, das sich darauf spezialisiert hat,
-moderne, performante und benutzerfreundliche Webseiten zu gestalten. In einer digitalen Welt, die sich ständig verändert,
-setzen wir auf Design, das nicht nur optisch überzeugt, sondern auch intuitiv bedienbar bleibt.
+Wir sind ein leidenschaftliches Team aus kreativen Köpfen und Strategen,
+das moderne und benutzerfreundliche Webseiten entwickelt.
 </p>
 
 </div>
@@ -328,33 +369,32 @@ setzen wir auf Design, das nicht nur optisch überzeugt, sondern auch intuitiv b
 <div class="info-card">
 
 <p>
-Unser Ziel ist es nicht nur, Oberflächen zu gestalten, sondern digitale Lösungen zu entwickeln, die wirklich funktionieren.
+Unser Ziel ist es, digitale Lösungen zu entwickeln,
+die wirklich funktionieren.
 </p>
 
 <p>
-Individuelle Konzepte: Keine Standard-Templates, sondern Lösungen, die exakt zu deiner Marke passen.
+Individuelle Konzepte statt Standard-Templates.
 </p>
 
 <p>
-User Experience (UX): Wir stellen den Nutzer in den Mittelpunkt, um Conversion-Raten zu steigern.
+User Experience (UX) für bessere Conversion-Raten.
 </p>
 
 <p>
-Zukunftssichere Technik: Schnelle Ladezeiten und responsive Designs für alle Endgeräte.
+Schnelle Ladezeiten und responsive Designs.
 </p>
 
 <p>
-Egal ob Start-up oder etabliertes Unternehmen wir machen deine Marke im Netz sichtbar und sorgen dafür,
-dass aus Besuchern treue Kunden werden. Lass uns gemeinsam deine digitale Erfolgsgeschichte schreiben!
+Wir machen deine Marke online sichtbar.
 </p>
 
 </div>
 
-<div style="text-align:right; margin:50px 0;">
+<div class="image-box">
 
 <img
-src="https://img-cdn.inc.com/image/upload/f_webp,q_auto,c_fit/images/panoramic/GettyImages-1355277961_542041_fucxet.jpg"
-width="350">
+src="https://img-cdn.inc.com/image/upload/f_webp,q_auto,c_fit/images/panoramic/GettyImages-1355277961_542041_fucxet.jpg">
 
 </div>
 
@@ -363,60 +403,51 @@ width="350">
 <div class="info-card">
 
 <p>
-Wir gestalten Ihre digitale Evolution
+Wir gestalten Ihre digitale Evolution.
 </p>
 
 <p>
-Bei Digitify sind wir davon überzeugt, dass die Zukunft nicht einfach passiert – man muss sie aktiv gestalten.
-In einer Zeit, in der sich Technologien in Lichtgeschwindigkeit weiterentwickeln, schlagen wir die Brücke
-zwischen Ihren ambitionierten Ideen und der digitalen Realität.
+Digitify verbindet moderne Technologien
+mit kreativen digitalen Lösungen.
 </p>
 
 <p>
-Wer wir sind
+Unsere Mission ist es,
+digitale Exzellenz zugänglich zu machen.
 </p>
 
 <p>
-Digitify ist ein Team aus leidenschaftlichen Innovatoren, Strategen und Technik-Enthusiasten.
-Wir haben es uns zur Aufgabe gemacht, die Art und Weise, wie Unternehmen in der digitalen Landschaft agieren,
-grundlegend zu verbessern. Wir liefern nicht nur Werkzeuge; wir erschaffen maßgeschneiderte digitale Ökosysteme,
-die es Marken ermöglichen, zu skalieren und in ihren Branchen die Führung zu übernehmen.
-</p>
-
-<p>
-Unsere Mission
-</p>
-
-<p>
-Unsere Mission ist simpel: Technologie zu entmystifizieren und digitale Exzellenz zugänglich zu machen.
-Wir beseitigen die Komplexität der digitalen Transformation, damit Sie sich auf Ihr Kerngeschäft konzentrieren können,
-während wir den technologischen Puls Ihres Unternehmens steuern.
-</p>
-
-<p>
-Unsere Vision
-</p>
-
-<p>
-Wir wollen der globale Katalysator für digitales Wachstum sein und Unternehmen jeder Größe dabei helfen,
-den Sprung vom traditionellen Modell zum zukunftssicheren digitalen Powerhouse zu meistern.
+Unsere Vision:
+Unternehmen in die digitale Zukunft führen.
 </p>
 
 </div>
 
-<a href="lerne.html" class="learn-btn">Learn More</a>
+<a href="lerne.html" class="learn-btn">
+Learn More
+</a>
 
 </section>
 
 <footer>
 
-<a href="/impressum/index.html">Impressum</a>
+<a href="/impressum/index.html">
+Impressum
+</a>
 
 <div class="socials">
 
-<a href="#"><i class="fa-brands fa-instagram"></i></a>
-<a href="#"><i class="fa-brands fa-github"></i></a>
-<a href="#"><i class="fa-brands fa-discord"></i></a>
+<a href="#">
+<i class="fa-brands fa-instagram"></i>
+</a>
+
+<a href="#">
+<i class="fa-brands fa-github"></i>
+</a>
+
+<a href="#">
+<i class="fa-brands fa-discord"></i>
+</a>
 
 </div>
 
