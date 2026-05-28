@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>test anim mit gsap</title>
+  
+  <link rel="stylesheet" href="/animtest/styles.css">
+  
+  <!-- CDNS for Libraries -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+  <script src="https://unpkg.com/lenis@1.1.20/dist/lenis.min.js" defer></script>
+  <script src="/animtest/js/main.js" defer></script>
+</head>
+<body>
+<nav class="navbar">
+    <div class="logo">Digitify</div>
+    <ul class="nav-links">
+      <li>
+  <button class="button14" onclick="window.location.href='/index.html#lander';">
+    Home
+  </button>
+</li>
+      <li>
+  <button class="button14" onclick="window.location.href='/animtest/index.html';">
+    animtest
+  </button>
+</li>
+      <li>
+  <button class="button14" onclick="window.location.href='/about/index.html';">
+    About
+  </button>
+</li>
+    </ul>
+  </nav>
+  <div class="scroll-container">
+    
+    <!-- FIRST VIDEO TIMELINE BLOCK -->
+    <section id="track-1" class="video-track">
+      <div class="sticky-viewport">
+        <div class="video-wrapper">
+          <video id="video-1" class="scrub-video" src="large2.mp4" playsinline muted preload="auto"></video>
+        </div>
+        <div class="text-overlay">
+          <h1 class="scroll-title">gsap smooth scroll</h1>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECOND VIDEO TIMELINE BLOCK -->
+    <section id="track-2" class="video-track">
+      <div class="sticky-viewport">
+        <div class="video-wrapper">
+          <video id="video-2" class="scrub-video" src="large.mp4" playsinline muted preload="auto"></video>
+        </div>
+        <div class="text-overlay">
+          <h1 class="scroll-title">mit apple macbook pro assets</h1>
+        </div>
+      </div>
+    </section>
+
+    <!-- FLOW CONTENT FOOTER -->
+    <section class="spacer-section">
+      <div class="spacer-content">
+        <h2>bitti eine 1</h2>
+        <p>veielen dank</p>
+      </div>
+    </section>
+
+  </div>
+
+</body>
+</html>
