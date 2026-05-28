@@ -18,14 +18,15 @@ document.addEventListener("DOMContentLoaded", () => {
   // 2. Video Track Components & Timelines
   const vid1 = document.getElementById("video-1");
   const vid2 = document.getElementById("video-2");
-
+  const vid3 = document.getElementById("video-3");
   let v1Data = { frame: 0 };
   let v2Data = { frame: 0 };
-
+  let v3Data = { frame: 0 };
   // Wait for asset engine setups to resolve metadata
   Promise.all([
     new Promise(res => vid1.readyState >= 2 ? res() : vid1.addEventListener("loadedmetadata", res)),
-    new Promise(res => vid2.readyState >= 2 ? res() : vid2.addEventListener("loadedmetadata", res))
+    new Promise(res => vid2.readyState >= 2 ? res() : vid2.addEventListener("loadedmetadata", res)),
+    new Promise(res => vid3.readyState >= 2 ? res() : vid3.addEventListener("loadedmetadata", res))
   ]).then(() => {
     createVideoOneTimeline();
     createVideoTwoTimeline();
@@ -93,5 +94,33 @@ document.addEventListener("DOMContentLoaded", () => {
       scale: 0.85,
       duration: 1
     }, "+=1");
+  }
+  // TRACK 3 timeline
+    function createVideoOneTimeline() {
+    const tl3 = gsap.timeline({
+      scrollTrigger: {
+        trigger: "#track-3",
+        start: "top top",
+        end: "+=3000",       // Distance to hold and scrub Video 1
+        scrub: true,
+        pin: true,
+        pinSpacing: true
+      }
+    });
+
+    tl3.to(v3Data, {
+      frame: vid3.duration,
+      duration: 3,
+      ease: "none",
+      onUpdate: () => {
+        vid3.currentTime = v3Data.frame;
+      }
+    });
+
+    tl3.to("#track-3 .scroll-title", {
+      opacity: 0,
+      scale: 0.85,
+      duration: 1.5
+    }, "0");
   }
 });
