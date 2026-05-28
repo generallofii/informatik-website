@@ -1,11 +1,11 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-  // 1. ALWAYS Register GSAP Plugins First
+  // 1. Register GSAP Plugins First
   gsap.registerPlugin(ScrollTrigger);
 
   // 2. Initialize Lenis Smooth Scrolling
   const lenis = new Lenis({
-    duration: 1.4,
+    duration: 1.2, // Slightly reduced for snappier feedback
     easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
     smoothWheel: true
   });
@@ -17,22 +17,17 @@ document.addEventListener("DOMContentLoaded", () => {
   });
   gsap.ticker.lagSmoothing(0);
 
-  // 3. Video Track Components & Timelines
+  // 3. Video Track Components
   const vid1 = document.getElementById("video-1");
   const vid2 = document.getElementById("video-2");
   const vid3 = document.getElementById("video-3");
-  
-  let v1Data = { frame: 0 };
-  let v2Data = { frame: 0 };
-  let v3Data = { frame: 0 };
 
-  // Wait for asset engine setups to resolve metadata
+  // Wait for all videos to load metadata
   Promise.all([
     new Promise(res => vid1.readyState >= 2 ? res() : vid1.addEventListener("loadedmetadata", res)),
     new Promise(res => vid2.readyState >= 2 ? res() : vid2.addEventListener("loadedmetadata", res)),
     new Promise(res => vid3.readyState >= 2 ? res() : vid3.addEventListener("loadedmetadata", res))
   ]).then(() => {
-    // FIXED: Invoking all three functions properly now
     createVideoOneTimeline();
     createVideoTwoTimeline();
     createVideoThreeTimeline(); 
@@ -45,26 +40,23 @@ document.addEventListener("DOMContentLoaded", () => {
         trigger: "#track-1",
         start: "top top",
         end: "+=3000",       
-        scrub: true,
+        scrub: 1, // Changed from true to 1. This catches up smoothly with Lenis
         pin: true,
         pinSpacing: true
       }
     });
 
-    tl1.to(v1Data, {
-      frame: vid1.duration,
-      duration: 3,
-      ease: "none",
-      onUpdate: () => {
-        vid1.currentTime = v1Data.frame;
-      }
-    });
+    // Tween the property DIRECTLY. No proxy object or onUpdate needed.
+    tl1.to(vid1, {
+      currentTime: vid1.duration,
+      ease: "none"
+    }, 0); // Starts at the absolute beginning of scroll
 
     tl1.to("#track-1 .scroll-title", {
       opacity: 0,
       scale: 0.85,
-      duration: 1.5
-    }, "0");
+      ease: "power1.out"
+    }, 0); // Runs alongside the video
   }
 
   // --- TRACK 2 ACTION SCENE ---
@@ -74,60 +66,53 @@ document.addEventListener("DOMContentLoaded", () => {
         trigger: "#track-2",
         start: "top top",    
         end: "+=3000",       
-        scrub: true,
+        scrub: 1, 
         pin: true,
         pinSpacing: true
       }
     });
 
-    tl2.to(v2Data, {
-      frame: vid2.duration,
-      duration: 3,
-      ease: "none",
-      onUpdate: () => {
-        vid2.currentTime = v2Data.frame;
-      }
-    });
+    tl2.to(vid2, {
+      currentTime: vid2.duration,
+      ease: "none"
+    }, 0);
 
+    // Title fades in instantly, then fades out halfway through the scroll
     tl2.fromTo("#track-2 .scroll-title", 
       { opacity: 0, scale: 1.1 },
-      { opacity: 1, scale: 1, duration: 1 }
+      { opacity: 1, scale: 1, ease: "power1.inOut" }, 
+      0
     );
 
     tl2.to("#track-2 .scroll-title", {
       opacity: 0,
       scale: 0.85,
-      duration: 1
-    }, "+=1");
+      ease: "power1.in"
+    }, ">+=0.5"); // Triggers slightly after the fade-in completes
   }
 
   // --- TRACK 3 ACTION SCENE ---
-  // FIXED: Renamed function correctly so it doesn't overwrite Track 1
   function createVideoThreeTimeline() {
     const tl3 = gsap.timeline({
       scrollTrigger: {
         trigger: "#track-3",
         start: "top top",
         end: "+=3000",       
-        scrub: true,
+        scrub: 1, 
         pin: true,
         pinSpacing: true
       }
     });
 
-    tl3.to(v3Data, {
-      frame: vid3.duration,
-      duration: 3,
-      ease: "none",
-      onUpdate: () => {
-        vid3.currentTime = v3Data.frame;
-      }
-    });
+    tl3.to(vid3, {
+      currentTime: vid3.duration,
+      ease: "none"
+    }, 0);
 
     tl3.to("#track-3 .scroll-title", {
       opacity: 0,
       scale: 0.85,
-      duration: 1.5
-    }, "0");
+      ease: "power1.out"
+    }, 0);
   }
 });
