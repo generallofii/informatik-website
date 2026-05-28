@@ -1,127 +1,426 @@
+```html
 <!DOCTYPE html>
 <html lang="de">
 <head>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <title>Digitify - About Us</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<title>Digitify - About Us</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family: Arial, sans-serif;
+    background:
+    linear-gradient(
+    135deg,
+    #f8fafc 0%,
+    #eff6ff 40%,
+    #dbeafe 100%
+    );
+    color:#111827;
+}
+
+/* NAVBAR */
+
+.navbar{
+    width:100%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:25px 70px;
+    position:fixed;
+    top:0;
+    z-index:1000;
+
+    background:rgba(255,255,255,0.7);
+    backdrop-filter:blur(12px);
+    border-bottom:1px solid rgba(255,255,255,0.3);
+}
+
+.logo{
+    font-size:28px;
+    font-weight:bold;
+    color:#2563eb;
+}
+
+.nav-links{
+    display:flex;
+    list-style:none;
+    gap:20px;
+}
+
+.button14{
+    text-decoration:none;
+    color:#111827;
+    font-weight:bold;
+    transition:0.3s ease;
+}
+
+.button14:hover{
+    color:#2563eb;
+}
+
+/* HERO */
+
+.top{
+    height:100vh;
+    position:relative;
+    overflow:hidden;
+}
+
+.top img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    filter:brightness(0.5);
+}
+
+.overlay{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    text-align:center;
+    color:white;
+    width:90%;
+}
+
+.landertext{
+    animation:fadeUp 1s ease;
+}
+
+.overlay h1{
+    font-size:clamp(50px,10vw,90px);
+    margin-bottom:20px;
+}
+
+.overlay p{
+    font-size:clamp(18px,3vw,28px);
+    line-height:1.6;
+}
+
+/* CONTENT */
+
+.bottom{
+    max-width:1100px;
+    margin:auto;
+    padding:120px 40px;
+}
+
+.bottom h1{
+    font-size:58px;
+    margin-bottom:35px;
+    text-align:center;
+}
+
+.bottom h2{
+    font-size:38px;
+    margin-top:70px;
+    margin-bottom:25px;
+    color:#111827;
+}
+
+.bottom p{
+    font-size:19px;
+    line-height:1.9;
+    color:#4b5563;
+    margin-bottom:25px;
+}
+
+/* IMAGE */
+
+.bottom img{
+    border-radius:24px;
+    box-shadow:0 15px 40px rgba(0,0,0,0.15);
+}
+
+/* GLASS CARDS */
+
+.info-card{
+    background:rgba(255,255,255,0.7);
+    backdrop-filter:blur(10px);
+
+    padding:35px;
+    border-radius:24px;
+
+    margin:35px 0;
+
+    box-shadow:
+    0 10px 30px rgba(0,0,0,0.08);
+
+    transition:0.35s ease;
+}
+
+.info-card:hover{
+    transform:translateY(-8px);
+    box-shadow:
+    0 15px 40px rgba(0,0,0,0.12);
+}
+
+/* BUTTON */
+
+.learn-btn{
+    display:inline-block;
+    margin-top:50px;
+    padding:16px 38px;
+
+    background:
+    linear-gradient(
+    135deg,
+    #2563eb,
+    #3b82f6
+    );
+
+    color:white;
+    text-decoration:none;
+    border-radius:14px;
+    font-size:18px;
+    font-weight:bold;
+
+    transition:0.3s ease;
+
+    box-shadow:
+    0 10px 25px rgba(37,99,235,0.3);
+}
+
+.learn-btn:hover{
+    transform:scale(1.05);
+}
+
+/* FOOTER */
+
+footer{
+    padding:50px 20px;
+    text-align:center;
+    background:white;
+    margin-top:80px;
+}
+
+footer a{
+    text-decoration:none;
+    color:#2563eb;
+    font-weight:bold;
+}
+
+.socials{
+    margin-top:20px;
+}
+
+.socials a{
+    margin:0 10px;
+    font-size:24px;
+    color:#111827;
+    transition:0.3s ease;
+}
+
+.socials a:hover{
+    color:#2563eb;
+    transform:translateY(-3px);
+}
+
+/* ANIMATION */
+
+@keyframes fadeUp{
+
+    from{
+        opacity:0;
+        transform:translateY(40px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+    .navbar{
+        padding:20px;
+    }
+
+    .nav-links{
+        gap:12px;
+    }
+
+    .bottom{
+        padding:80px 25px;
+    }
+
+    .bottom h1{
+        font-size:42px;
+    }
+
+    .bottom h2{
+        font-size:30px;
+    }
+
+    .bottom p{
+        font-size:17px;
+    }
+
+    .bottom img{
+        width:100%;
+    }
+
+}
+
+</style>
 </head>
 
 <body>
 
-
 <nav class="navbar">
 
-    <div class="logo">Digitify</div>
+<div class="logo">Digitify</div>
 
-    <ul class="nav-links">
-        <li><a class="button14" href="/index.html">Home</a></li>
-        <li><a class="button14" href="/index.html#pricing">Pricing</a></li>
-        <li><a class="button14" href="index.html">About</a></li>
-    </ul>
+<ul class="nav-links">
+<li><a class="button14" href="/index.html">Home</a></li>
+<li><a class="button14" href="/index.html#pricing">Pricing</a></li>
+<li><a class="button14" href="index.html">About</a></li>
+</ul>
 
-</nav>       
-
+</nav>
 
 <section class="top">
-    <img src="https://www.dgq.de/wp-content/uploads/2022/02/QM-und-Kuenstliche-Intelligenz_Fachbeitrag.jpg" alt="Hero Bild">
-    <div class="overlay">
-    <h1 class="landertext">Digitify</h1>
-    <p class="landertext">Digitale Lösungen für moderne Unternehmen</p>
+
+<img src="https://www.dgq.de/wp-content/uploads/2022/02/QM-und-Kuenstliche-Intelligenz_Fachbeitrag.jpg">
+
+<div class="overlay">
+
+<h1 class="landertext">Digitify</h1>
+
+<p class="landertext">
+Digitale Lösungen für moderne Unternehmen
+</p>
+
 </div>
+
 </section>
 
 <section class="bottom">
 
-    <h1>About Us</h1>
+<h1>About Us</h1>
 
-    <p>
-        Wir sind ein leidenschaftliches Team aus kreativen Köpfen und Strategen, das sich darauf spezialisiert hat,
-        moderne, performante und benutzerfreundliche Webseiten zu gestalten. In einer digitalen Welt, die sich ständig verändert,
-        setzen wir auf Design, das nicht nur optisch überzeugt, sondern auch intuitiv bedienbar bleibt.
-    </p>
+<div class="info-card">
 
-    <h2>Warum Digitify?</h2>
+<p>
+Wir sind ein leidenschaftliches Team aus kreativen Köpfen und Strategen, das sich darauf spezialisiert hat,
+moderne, performante und benutzerfreundliche Webseiten zu gestalten. In einer digitalen Welt, die sich ständig verändert,
+setzen wir auf Design, das nicht nur optisch überzeugt, sondern auch intuitiv bedienbar bleibt.
+</p>
 
-    <p>
-        Unser Ziel ist es nicht nur, Oberflächen zu gestalten, sondern digitale Lösungen zu entwickeln, die wirklich funktionieren.
-    </p>
+</div>
 
-    <p>
-        Individuelle Konzepte: Keine Standard-Templates, sondern Lösungen, die exakt zu deiner Marke passen.
-    </p>
+<h2>Warum Digitify?</h2>
 
-    <p>
-        User Experience (UX): Wir stellen den Nutzer in den Mittelpunkt, um Conversion-Raten zu steigern.
-    </p>
+<div class="info-card">
 
-    <p>
-        Zukunftssichere Technik: Schnelle Ladezeiten und responsive Designs für alle Endgeräte.
-    </p>
+<p>
+Unser Ziel ist es nicht nur, Oberflächen zu gestalten, sondern digitale Lösungen zu entwickeln, die wirklich funktionieren.
+</p>
 
-    <p>
-        Egal ob Start-up oder etabliertes Unternehmen wir machen deine Marke im Netz sichtbar und sorgen dafür,
-        dass aus Besuchern treue Kunden werden. Lass uns gemeinsam deine digitale Erfolgsgeschichte schreiben!
-    </p>
+<p>
+Individuelle Konzepte: Keine Standard-Templates, sondern Lösungen, die exakt zu deiner Marke passen.
+</p>
 
-    <div style="text-align:right; margin:40px 0;">
-        <img src="https://img-cdn.inc.com/image/upload/f_webp,q_auto,c_fit/images/panoramic/GettyImages-1355277961_542041_fucxet.jpg" width="350">
-    </div>
+<p>
+User Experience (UX): Wir stellen den Nutzer in den Mittelpunkt, um Conversion-Raten zu steigern.
+</p>
 
-    <h2>Our Company</h2>
+<p>
+Zukunftssichere Technik: Schnelle Ladezeiten und responsive Designs für alle Endgeräte.
+</p>
 
-    <p>
-        Wir gestalten Ihre digitale Evolution
-    </p>
+<p>
+Egal ob Start-up oder etabliertes Unternehmen wir machen deine Marke im Netz sichtbar und sorgen dafür,
+dass aus Besuchern treue Kunden werden. Lass uns gemeinsam deine digitale Erfolgsgeschichte schreiben!
+</p>
 
-    <p>
-        Bei Digitify sind wir davon überzeugt, dass die Zukunft nicht einfach passiert – man muss sie aktiv gestalten.
-        In einer Zeit, in der sich Technologien in Lichtgeschwindigkeit weiterentwickeln, schlagen wir die Brücke
-        zwischen Ihren ambitionierten Ideen und der digitalen Realität.
-    </p>
+</div>
 
-    <p>
-        Wer wir sind
-    </p>
+<div style="text-align:right; margin:50px 0;">
 
-    <p>
-        Digitify ist ein Team aus leidenschaftlichen Innovatoren, Strategen und Technik-Enthusiasten.
-        Wir haben es uns zur Aufgabe gemacht, die Art und Weise, wie Unternehmen in der digitalen Landschaft agieren,
-        grundlegend zu verbessern. Wir liefern nicht nur Werkzeuge; wir erschaffen maßgeschneiderte digitale Ökosysteme,
-        die es Marken ermöglichen, zu skalieren und in ihren Branchen die Führung zu übernehmen.
-    </p>
+<img
+src="https://img-cdn.inc.com/image/upload/f_webp,q_auto,c_fit/images/panoramic/GettyImages-1355277961_542041_fucxet.jpg"
+width="350">
 
-    <p>
-        Unsere Mission
-    </p>
+</div>
 
-    <p>
-        Unsere Mission ist simpel: Technologie zu entmystifizieren und digitale Exzellenz zugänglich zu machen.
-        Wir beseitigen die Komplexität der digitalen Transformation, damit Sie sich auf Ihr Kerngeschäft konzentrieren können,
-        während wir den technologischen Puls Ihres Unternehmens steuern.
-    </p>
+<h2>Our Company</h2>
 
-    <p>
-        Unsere Vision
-    </p>
+<div class="info-card">
 
-    <p>
-        Wir wollen der globale Katalysator für digitales Wachstum sein und Unternehmen jeder Größe dabei helfen,
-        den Sprung vom traditionellen Modell zum zukunftssicheren digitalen Powerhouse zu meistern.
-    </p>
+<p>
+Wir gestalten Ihre digitale Evolution
+</p>
 
-    <a href="lerne.html">learn more</a>
+<p>
+Bei Digitify sind wir davon überzeugt, dass die Zukunft nicht einfach passiert – man muss sie aktiv gestalten.
+In einer Zeit, in der sich Technologien in Lichtgeschwindigkeit weiterentwickeln, schlagen wir die Brücke
+zwischen Ihren ambitionierten Ideen und der digitalen Realität.
+</p>
+
+<p>
+Wer wir sind
+</p>
+
+<p>
+Digitify ist ein Team aus leidenschaftlichen Innovatoren, Strategen und Technik-Enthusiasten.
+Wir haben es uns zur Aufgabe gemacht, die Art und Weise, wie Unternehmen in der digitalen Landschaft agieren,
+grundlegend zu verbessern. Wir liefern nicht nur Werkzeuge; wir erschaffen maßgeschneiderte digitale Ökosysteme,
+die es Marken ermöglichen, zu skalieren und in ihren Branchen die Führung zu übernehmen.
+</p>
+
+<p>
+Unsere Mission
+</p>
+
+<p>
+Unsere Mission ist simpel: Technologie zu entmystifizieren und digitale Exzellenz zugänglich zu machen.
+Wir beseitigen die Komplexität der digitalen Transformation, damit Sie sich auf Ihr Kerngeschäft konzentrieren können,
+während wir den technologischen Puls Ihres Unternehmens steuern.
+</p>
+
+<p>
+Unsere Vision
+</p>
+
+<p>
+Wir wollen der globale Katalysator für digitales Wachstum sein und Unternehmen jeder Größe dabei helfen,
+den Sprung vom traditionellen Modell zum zukunftssicheren digitalen Powerhouse zu meistern.
+</p>
+
+</div>
+
+<a href="lerne.html" class="learn-btn">Learn More</a>
 
 </section>
-    <footer>
-    <a href="/impressum/index.html">Impressum</a> |
- 
-    <div class="socials">
-        <a href="#"><i class="fa-brands fa-instagram"></i></a>
-        <a href="#"><i class="fa-brands fa-github"></i></a>
-        <a href="#"><i class="fa-brands fa-discord"></i></a>
-    </div>
+
+<footer>
+
+<a href="/impressum/index.html">Impressum</a>
+
+<div class="socials">
+
+<a href="#"><i class="fa-brands fa-instagram"></i></a>
+<a href="#"><i class="fa-brands fa-github"></i></a>
+<a href="#"><i class="fa-brands fa-discord"></i></a>
+
+</div>
+
 </footer>
 
 </body>
