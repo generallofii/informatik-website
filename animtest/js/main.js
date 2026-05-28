@@ -1,6 +1,9 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-  // 1. Initialize Lenis Smooth Scrolling
+  // 1. ALWAYS Register GSAP Plugins First
+  gsap.registerPlugin(ScrollTrigger);
+
+  // 2. Initialize Lenis Smooth Scrolling
   const lenis = new Lenis({
     duration: 1.4,
     easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
@@ -8,28 +11,31 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   lenis.on('scroll', ScrollTrigger.update);
+  
   gsap.ticker.add((time) => {
     lenis.raf(time * 1000);
   });
   gsap.ticker.lagSmoothing(0);
 
-  gsap.registerPlugin(ScrollTrigger);
-
-  // 2. Video Track Components & Timelines
+  // 3. Video Track Components & Timelines
   const vid1 = document.getElementById("video-1");
   const vid2 = document.getElementById("video-2");
   const vid3 = document.getElementById("video-3");
+  
   let v1Data = { frame: 0 };
   let v2Data = { frame: 0 };
   let v3Data = { frame: 0 };
+
   // Wait for asset engine setups to resolve metadata
   Promise.all([
     new Promise(res => vid1.readyState >= 2 ? res() : vid1.addEventListener("loadedmetadata", res)),
     new Promise(res => vid2.readyState >= 2 ? res() : vid2.addEventListener("loadedmetadata", res)),
     new Promise(res => vid3.readyState >= 2 ? res() : vid3.addEventListener("loadedmetadata", res))
   ]).then(() => {
+    // FIXED: Invoking all three functions properly now
     createVideoOneTimeline();
     createVideoTwoTimeline();
+    createVideoThreeTimeline(); 
   });
 
   // --- TRACK 1 ACTION SCENE ---
@@ -38,7 +44,7 @@ document.addEventListener("DOMContentLoaded", () => {
       scrollTrigger: {
         trigger: "#track-1",
         start: "top top",
-        end: "+=3000",       // Distance to hold and scrub Video 1
+        end: "+=3000",       
         scrub: true,
         pin: true,
         pinSpacing: true
@@ -66,8 +72,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const tl2 = gsap.timeline({
       scrollTrigger: {
         trigger: "#track-2",
-        start: "top top",    // CRITICAL: Triggers animation ONLY when Track 2 hits the very top of the window
-        end: "+=3000",       // Distance to hold and scrub Video 2
+        start: "top top",    
+        end: "+=3000",       
         scrub: true,
         pin: true,
         pinSpacing: true
@@ -83,7 +89,6 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
 
-    // Bring title in and out sequentially inside the locked container space
     tl2.fromTo("#track-2 .scroll-title", 
       { opacity: 0, scale: 1.1 },
       { opacity: 1, scale: 1, duration: 1 }
@@ -95,13 +100,15 @@ document.addEventListener("DOMContentLoaded", () => {
       duration: 1
     }, "+=1");
   }
-  // TRACK 3 timeline
-    function createVideoOneTimeline() {
+
+  // --- TRACK 3 ACTION SCENE ---
+  // FIXED: Renamed function correctly so it doesn't overwrite Track 1
+  function createVideoThreeTimeline() {
     const tl3 = gsap.timeline({
       scrollTrigger: {
         trigger: "#track-3",
         start: "top top",
-        end: "+=3000",       // Distance to hold and scrub Video 1
+        end: "+=3000",       
         scrub: true,
         pin: true,
         pinSpacing: true
