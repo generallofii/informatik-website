@@ -1,7 +1,7 @@
     .navbar {
   display: flex;
-  justify-content: space-between; /* pushes logo left, links right */
-  align-items: center;            /* vertically center */
+  justify-content: space-between; 
+  align-items: center;            
   padding: 1rem 1rem;
   background: black;
   color: white;
