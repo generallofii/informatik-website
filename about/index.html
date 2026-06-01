@@ -12,6 +12,34 @@
 href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
 <style>
+    .navbar {
+  display: flex;
+  justify-content: space-between; /* pushes logo left, links right */
+  align-items: center;            /* vertically center */
+  padding: 1rem 1rem;
+  background: black;
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.nav-links {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: bold;
+  font-size: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+  gap: 2rem;      /* space between items */
+  list-style: none;
+  list-style-type: none; /* Removes the bullet points */
+  margin: 0;             /* Removes default browser margins */
+  padding: 0;            /* Removes default browser padding */
+}
+
 
 :root{
     --blue:#2563eb;
