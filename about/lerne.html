@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Digitify - Erlebnisse Gestalten</title>
+  <link rel="stylesheet" href="/about/styles.css">
+  <style>
+    body {
+      background-color: #030014;
+      color: #ffffff;
+      font-family: 'Outfit', sans-serif;
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    /* Ambient background glows */
+    .glow-1 {
+      position: absolute;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(123, 97, 255, 0.1) 0%, transparent 75%);
+      top: -10%;
+      left: -10%;
+      pointer-events: none;
+      filter: blur(80px);
+    }
+    .glow-2 {
+      position: absolute;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(0, 242, 254, 0.08) 0%, transparent 75%);
+      bottom: -10%;
+      right: -10%;
+      pointer-events: none;
+      filter: blur(80px);
+    }
+
+    .learn-more {
+      max-width: 1100px;
+      width: 90%;
+      margin: 80px auto;
+      padding: 40px 20px;
+      text-align: center;
+      position: relative;
+      z-index: 10;
+    }
+
+    .tag {
+      display: inline-block;
+      padding: 6px 18px;
+      border-radius: 50px;
+      background: rgba(123, 97, 255, 0.15);
+      border: 1px solid #7b61ff;
+      color: #00f2fe;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      margin-bottom: 25px;
+      text-shadow: 0 0 10px rgba(0, 242, 254, 0.4);
+    }
+
+    .learn-more h2 {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      font-weight: 800;
+      line-height: 1.1;
+      letter-spacing: -0.03em;
+      background: linear-gradient(135deg, #ffffff 0%, #00f2fe 50%, #7b61ff 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 30px;
+    }
+
+    .intro {
+      max-width: 800px;
+      margin: 0 auto 60px;
+      font-size: clamp(1.1rem, 2vw, 1.4rem);
+      color: #b4b4c6;
+      line-height: 1.8;
+      font-weight: 300;
+    }
+
+    .info-boxes {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      margin-bottom: 60px;
+    }
+
+    .box {
+      background: rgba(255, 255, 255, 0.03);
+      backdrop-filter: blur(20px) saturate(180%);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 40px 30px;
+      border-radius: 24px;
+      box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      text-align: left;
+    }
+
+    .box:hover {
+      transform: translateY(-8px);
+      border-color: #00f2fe;
+      box-shadow: 0 20px 45px rgba(0, 242, 254, 0.15);
+      background: rgba(255, 255, 255, 0.06);
+    }
+
+    .box h3 {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 15px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .box h3::before {
+      content: '';
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      background-color: #7b61ff;
+      border-radius: 50%;
+      box-shadow: 0 0 8px #7b61ff;
+    }
+
+    .box p {
+      color: #b4b4c6;
+      line-height: 1.7;
+      font-size: 1.05rem;
+      font-weight: 300;
+    }
+
+    .back-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.8rem 2.2rem;
+      border-radius: 50px;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 1rem;
+      font-weight: 600;
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .back-btn:hover {
+      background: linear-gradient(135deg, #00f2fe, #7b61ff);
+      border-color: transparent;
+      color: #030014;
+      transform: translateY(-3px);
+      box-shadow: 0 10px 25px rgba(0, 242, 254, 0.3);
+    }
+  </style>
+</head>
+<body>
+  <!-- Ambient background glows -->
+  <div class="glow-1"></div>
+  <div class="glow-2"></div>
+
+  <section class="learn-more">
+    <span class="tag">DIGITIFY</span>
+
+    <h2>Wir gestalten digitale Erlebnisse</h2>
+
+    <p class="intro">
+      Bei Digitify entwickeln wir moderne Webseiten, kreative Strategien
+      und digitale Lösungen, die Marken wachsen lassen.
+      Unser Fokus liegt auf Design, Performance und einer perfekten User Experience.
+    </p>
+
+    <div class="info-boxes">
+      <div class="box">
+        <h3>Modernes Design</h3>
+        <p>
+          Minimalistisch, elegant und individuell auf deine Marke abgestimmt.
+          Wir erschaffen Designs, die professionell wirken und im Kopf bleiben.
+        </p>
+      </div>
+
+      <div class="box">
+        <h3>User Experience</h3>
+        <p>
+          Eine starke Website überzeugt nicht nur optisch,
+          sondern führt Besucher intuitiv durch deine Inhalte
+          und steigert deine Conversion.
+        </p>
+      </div>
+
+      <div class="box">
+        <h3>Performance & Technik</h3>
+        <p>
+          Schnelle Ladezeiten, responsive Layouts und moderne Technologien
+          sorgen für eine zukunftssichere digitale Präsenz.
+        </p>
+      </div>
+    </div>
+
+    <a href="/index.html" class="back-btn">Zurück</a>
+  </section>
+</body>
+</html>
