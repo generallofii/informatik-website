@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Digitify - ISE Cloud Synergy Engine</title>
+  
+  <link rel="stylesheet" href="/animtest/styles.css">
+  
+  <!-- GSAP & ScrollTrigger + Lenis for Smooth Inertial Scrolling -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+  <script src="https://unpkg.com/lenis@1.1.20/dist/lenis.min.js" defer></script>
+  <script src="/animtest/js/main.js" defer></script>
+</head>
+<body>
+  <!-- LOADING OVERLAY -->
+  <div id="loader" class="loader-overlay">
+    <div class="loader-content">
+      <div class="loader-brand">Digitify</div>
+      <div class="loader-subtitle">Intelligent Synergy Engine</div>
+      <div class="loader-bar-track">
+        <div id="loader-bar" class="loader-bar-fill"></div>
+      </div>
+      <div id="loader-status" class="loader-status">Initializing synergy modules…</div>
+    </div>
+  </div>
+
+  <!-- TRANSLUCENT NAVBAR -->
+  <nav class="navbar">
+    <div class="logo" onclick="window.location.href='/index.html#lander';">Digitify</div>
+    <ul class="nav-links">
+      <li><button class="button14" onclick="window.location.href='/index.html#lander';">Home</button></li>
+      <li><button class="button14" onclick="window.location.href='/index.html#pricing';">Pricing</button></li>
+      <li><button class="button14" onclick="window.location.href='/animtest/index.html';">ISE Cloud</button></li>
+      <li><button class="button14" onclick="window.location.href='/about/index.html';">About</button></li>
+    </ul>
+  </nav>
+
+  <!-- SCROLL CONTAINER -->
+  <div class="scroll-container">
+    
+    <!-- FIRST VIDEO TIMELINE BLOCK -->
+    <section id="track-1" class="video-track">
+      <div class="sticky-viewport">
+        <div class="video-wrapper">
+          <video id="video-1" class="scrub-video" data-src="large.mp4" playsinline muted></video>
+        </div>
+        <div class="text-overlay">
+          <h1 class="scroll-title">Digitify Intelligent Synergy Engine</h1>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECOND VIDEO TIMELINE BLOCK -->
+    <section id="track-2" class="video-track">
+      <div class="sticky-viewport">
+        <div class="video-wrapper">
+          <video id="video-2" class="scrub-video" data-src="large1.mp4" playsinline muted></video>
+        </div>
+        <div class="text-overlay">
+          <h1 class="scroll-title">Schnell. Innovativ. Intelligent.</h1>
+          <h1 class="scroll-title">20% mehr Output pro Watt</h1>
+          <h1 class="scroll-title">10% stromeffizienter</h1>
+        </div>
+      </div>
+    </section>
+
+    <!-- THIRD VIDEO TIMELINE BLOCK -->
+    <section id="track-3" class="video-track">
+      <div class="sticky-viewport">
+        <div class="video-wrapper">
+          <video id="video-3" class="scrub-video" data-src="large2.mp4" playsinline muted></video>
+        </div>
+        <div class="text-overlay">
+          <h1 class="scroll-title">10x intelligenter als Vorgängermodelle</h1>
+          <h1 class="scroll-title">Trainiert auf über 1000 Datasets</h1>
+        </div>
+      </div>
+    </section>
+
+    <!-- FLOW CONTENT FOOTER -->
+    <section class="spacer-section">
+      <div class="spacer-content">
+        <h2>Veröffentlichung auf der CES 2148</h2>
+        <p>Erleben Sie die disruptive Zukunft live. Besuchen Sie unseren Digitify-Pavillon!</p>
+        <button class="button14" style="margin-top: 40px; border: 1px solid var(--accent-neon-blue); padding: 10px 30px; height: auto; border-radius: 30px;" onclick="window.location.href='/index.html';">Zurück zur Startseite</button>
+      </div>
+    </section>
+
+  </div>
+
+</body>
+</html>

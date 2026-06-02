@@ -1,0 +1,350 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Outfit:wght@100..900&family=Syne:wght@400..800&display=swap');
+
+/* ==========================================
+   DESIGN VARIABLES
+   ========================================== */
+:root {
+  --bg-deep: #000000;
+  --border-light: rgba(255, 255, 255, 0.08);
+  --accent-neon-blue: #00f2fe;
+  --accent-neon-purple: #7b61ff;
+  --accent-neon-pink: #ec38bc;
+  
+  --font-display: 'Syne', 'Outfit', sans-serif;
+  --font-sans: 'Outfit', 'Inter', sans-serif;
+  
+  --transition-smooth: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-spring: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* ==========================================
+   RESET & LOADER
+   ========================================== */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body.is-loading {
+  overflow: hidden;
+}
+
+body {
+  background-color: var(--bg-deep);
+  color: #ffffff;
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+html.lenis, html.lenis body {
+  background-color: var(--bg-deep) !important;
+  height: auto;
+}
+
+.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+/* HIGH-TECH SYSTEM BOOT LOADER */
+.loader-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: #020208;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.8s;
+}
+
+.loader-overlay.hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.loader-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.2rem;
+  width: 90%;
+  max-width: 400px;
+  text-align: center;
+}
+
+.loader-brand {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(2.2rem, 6vw, 3.8rem);
+  letter-spacing: -0.02em;
+  background: linear-gradient(135deg, var(--accent-neon-blue) 0%, var(--accent-neon-purple) 50%, var(--accent-neon-pink) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer-brand 3s infinite alternate ease-in-out;
+}
+
+.loader-subtitle {
+  font-family: var(--font-sans);
+  font-weight: 400;
+  font-size: 0.95rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #7b61ff;
+  text-shadow: 0 0 10px rgba(123, 97, 255, 0.3);
+}
+
+.loader-bar-track {
+  width: 100%;
+  height: 3px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 4px;
+  overflow: hidden;
+  margin-top: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.loader-bar-fill {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, var(--accent-neon-blue), var(--accent-neon-purple), var(--accent-neon-pink));
+  border-radius: 4px;
+  transition: width 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 0 12px rgba(0, 242, 254, 0.8);
+}
+
+.loader-status {
+  font-size: 0.8rem;
+  color: #6b6b7f;
+  letter-spacing: 0.05em;
+  margin-top: 5px;
+}
+
+@keyframes shimmer-brand {
+  0% { filter: hue-rotate(0deg) brightness(1); }
+  100% { filter: hue-rotate(20deg) brightness(1.2); }
+}
+
+/* ==========================================
+   NAVBAR (TRANSLUCENT DESIGN SYSTEM)
+   ========================================== */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.25rem 5%;
+  position: fixed;
+  top: 20px;
+  left: 5%;
+  right: 5%;
+  height: 70px;
+  background: rgba(10, 8, 26, 0.5);
+  backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid var(--border-light);
+  border-radius: 50px;
+  z-index: 999;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+}
+
+.logo {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1.6rem;
+  letter-spacing: -0.03em;
+  background: linear-gradient(135deg, var(--accent-neon-blue) 0%, var(--accent-neon-purple) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  cursor: pointer;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  list-style: none;
+}
+
+.button14 {
+  padding: 0.5rem 1.25rem;
+  height: 40px;
+  color: #ffffff;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 30px;
+  font-family: var(--font-sans);
+  font-weight: 500;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+}
+
+.button14:hover {
+  color: var(--accent-neon-blue);
+  text-shadow: 0 0 10px rgba(0, 242, 254, 0.4);
+}
+
+/* ==========================================
+   SCROLL ENGINE TIMELINES & VIDEOS
+   ========================================== */
+.scroll-container {
+  width: 100%;
+  position: relative;
+  background-color: var(--bg-deep);
+}
+
+.video-track {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--bg-deep);
+}
+
+.sticky-viewport {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  background-color: var(--bg-deep);
+}
+
+.video-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  background-color: var(--bg-deep);
+  will-change: transform;
+}
+
+/* Scrubbing video element styling */
+.scrub-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  pointer-events: none;
+  background-color: var(--bg-deep);
+  filter: brightness(0.65) contrast(1.1);
+  will-change: currentTime;
+}
+
+/* Ambient vignetting to isolate scroll titles */
+.sticky-viewport::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at center, transparent 30%, rgba(0, 0, 0, 0.8) 100%);
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* ==========================================
+   TYPOGRAPHY AND STAGGER OVERLAYS
+   ========================================== */
+.text-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  pointer-events: none;
+  z-index: 3;
+}
+
+#track-2 .text-overlay,
+#track-3 .text-overlay {
+  position: absolute;
+}
+
+#track-2 .scroll-title,
+#track-3 .scroll-title {
+  position: absolute;
+  opacity: 0;
+}
+
+.scroll-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 5vw, 4.8rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+  background: linear-gradient(180deg, #ffffff 0%, #b4b4c6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  padding: 0 8vw;
+  filter: drop-shadow(0 4px 12px rgba(0,0,0,0.5));
+}
+
+/* ==========================================
+   SPACERS & FOOT FLOWS
+   ========================================== */
+.spacer-section {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--bg-deep);
+  border-top: 1px solid var(--border-light);
+  position: relative;
+  padding: 80px 40px;
+}
+
+.spacer-section::before {
+  content: '';
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(123, 97, 255, 0.1) 0%, transparent 70%);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.spacer-content {
+  max-width: 850px;
+  text-align: center;
+  position: relative;
+  z-index: 10;
+}
+
+.spacer-content h2 {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  background: linear-gradient(135deg, #00f2fe, #ec38bc);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 25px;
+}
+
+.spacer-content p {
+  font-size: 1.35rem;
+  color: #b4b4c6;
+  font-weight: 300;
+}
+
+/* RESPONSIVE SCALING */
+@media (max-width: 900px) {
+  .navbar {
+    width: 92%;
+    left: 4%;
+    right: 4%;
+  }
+}
