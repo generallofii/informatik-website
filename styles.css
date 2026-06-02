@@ -1,0 +1,826 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Outfit:wght@100..900&family=Syne:wght@400..800&display=swap');
+
+/* ==========================================
+   DESIGN MATRIX (CSS VARIABLE SYSTEM)
+   ========================================== */
+:root {
+  --bg-deep: #030014;
+  --bg-darker: #080710;
+  --bg-card: rgba(255, 255, 255, 0.03);
+  --bg-card-hover: rgba(255, 255, 255, 0.07);
+  --border-light: rgba(255, 255, 255, 0.08);
+  --border-glow: rgba(123, 97, 255, 0.3);
+  
+  /* HSL tailored color accents */
+  --accent-neon-blue: #00f2fe;
+  --accent-neon-purple: #7b61ff;
+  --accent-neon-pink: #ec38bc;
+  --text-primary: #ffffff;
+  --text-secondary: #b4b4c6;
+  --text-muted: #6b6b7f;
+  
+  /* Gradients */
+  --grad-primary: linear-gradient(135deg, var(--accent-neon-blue) 0%, var(--accent-neon-purple) 50%, var(--accent-neon-pink) 100%);
+  --grad-dark: linear-gradient(180deg, #0f0c1b 0%, #030014 100%);
+  --grad-glow: radial-gradient(circle at center, rgba(123, 97, 255, 0.15) 0%, transparent 70%);
+  
+  --font-display: 'Syne', 'Outfit', 'Inter', sans-serif;
+  --font-sans: 'Outfit', 'Inter', sans-serif;
+  
+  --transition-smooth: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-spring: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* ==========================================
+   GLOBAL RESET & DEEP SCROLLING
+   ========================================== */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: var(--bg-deep);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+}
+
+body {
+  background-color: var(--bg-deep);
+  color: var(--text-primary);
+  min-height: 100vh;
+  overflow-x: hidden;
+  position: relative;
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.6;
+}
+
+/* CUSTOM SCROLLBAR */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-deep);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(123, 97, 255, 0.3);
+  border-radius: 10px;
+  border: 2px solid var(--bg-deep);
+  transition: var(--transition-smooth);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-neon-purple);
+}
+
+/* CUSTOM CURSOR */
+.custom-cursor {
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--accent-neon-blue);
+  border-radius: 50%;
+  position: fixed;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 10000;
+  transition: width 0.3s, height 0.3s, background-color 0.3s, border-color 0.3s;
+  mix-blend-mode: difference;
+}
+
+.custom-cursor-dot {
+  width: 4px;
+  height: 4px;
+  background-color: var(--accent-neon-pink);
+  border-radius: 50%;
+  position: fixed;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 10000;
+  transition: transform 0.1s;
+}
+
+.cursor-hover {
+  width: 50px;
+  height: 50px;
+  background-color: rgba(0, 242, 254, 0.1);
+  border-color: var(--accent-neon-pink);
+}
+
+/* ==========================================
+   VISUAL FLUIDITY: BACKGROUND GLOW MATRIX
+   ========================================== */
+.radial-glow {
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(123, 97, 255, 0.12) 0%, transparent 75%);
+  top: 10%;
+  left: 5%;
+  pointer-events: none;
+  z-index: 0;
+  filter: blur(80px);
+  animation: float-glow 12s infinite alternate ease-in-out;
+}
+
+.radial-glow-2 {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(0, 242, 254, 0.1) 0%, transparent 75%);
+  bottom: 15%;
+  right: 5%;
+  pointer-events: none;
+  z-index: 0;
+  filter: blur(80px);
+  animation: float-glow 15s infinite alternate-reverse ease-in-out;
+}
+
+@keyframes float-glow {
+  0% { transform: translateY(0px) scale(1); }
+  100% { transform: translateY(50px) scale(1.1); }
+}
+
+/* ==========================================
+   TRANSLUCENT PILL NAVBAR
+   ========================================== */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.25rem 5%;
+  position: fixed;
+  top: 20px;
+  left: 5%;
+  right: 5%;
+  height: 70px;
+  background: rgba(10, 8, 26, 0.5);
+  backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid var(--border-light);
+  border-radius: 50px;
+  z-index: 999;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+  transition: var(--transition-smooth);
+}
+
+.logo {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1.6rem;
+  letter-spacing: -0.03em;
+  background: var(--grad-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+}
+
+.logo:hover {
+  filter: hue-rotate(15deg) brightness(1.1);
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  list-style: none;
+}
+
+.nav-links li {
+  position: relative;
+}
+
+/* SLEEK BUTTON IN NAVBAR */
+.button14 {
+  padding: 0.5rem 1.25rem;
+  height: 40px;
+  color: var(--text-primary);
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 30px;
+  font-family: var(--font-sans);
+  font-weight: 500;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.button14::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 20%;
+  width: 60%;
+  height: 2px;
+  background: var(--grad-primary);
+  transform: scaleX(0);
+  transition: var(--transition-smooth);
+}
+
+.button14:hover::after {
+  transform: scaleX(1);
+}
+
+.button14:hover {
+  color: var(--accent-neon-blue);
+}
+
+/* ==========================================
+   HERO / LANDER SECTION (DESIGN MASTERCLASS)
+   ========================================== */
+.lander {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 120px 20px;
+  z-index: 1;
+  background: transparent;
+  overflow: hidden;
+}
+
+/* Canvas network layer */
+#hero-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.landerText {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(3rem, 7vw, 6.5rem);
+  line-height: 1.1;
+  letter-spacing: -0.04em;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+}
+
+.landerTextEmphasis {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-style: italic;
+  background: var(--grad-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.text {
+  font-family: var(--font-sans);
+  font-weight: 300;
+  font-size: clamp(1.1rem, 2vw, 1.6rem);
+  color: var(--text-secondary);
+  max-width: 800px;
+  margin: 0 auto 2.5rem;
+}
+
+/* ==========================================
+   DYNAMIC BUTTONS
+   ========================================== */
+.button14big {
+  position: relative;
+  padding: 0.8rem 2.2rem;
+  color: var(--text-primary);
+  background: rgba(123, 97, 255, 0.15);
+  border: 1px solid var(--accent-neon-purple);
+  border-radius: 50px;
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 1rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  cursor: pointer;
+  overflow: hidden;
+  transition: var(--transition-spring);
+  box-shadow: 0 4px 15px rgba(123, 97, 255, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.button14big::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: 0.5s;
+}
+
+.button14big:hover::before {
+  left: 100%;
+}
+
+.button14big:hover {
+  transform: translateY(-5px) scale(1.03);
+  background: var(--grad-primary);
+  border-color: transparent;
+  box-shadow: 0 10px 25px rgba(0, 242, 254, 0.4);
+}
+
+.button14big:active {
+  transform: translateY(-2px);
+}
+
+/* ==========================================
+   FEATURES SECTION (INTERACTIVE GLASS CARDS)
+   ========================================== */
+.features-section {
+  padding: 120px 8%;
+  position: relative;
+  background: transparent;
+  z-index: 2;
+}
+
+.feature-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 80px;
+  margin-bottom: 120px;
+}
+
+.feature-row.reverse {
+  flex-direction: row-reverse;
+}
+
+.feature-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.5rem;
+}
+
+.pricingTitle {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(2rem, 3.5vw, 3.2rem);
+  letter-spacing: -0.02em;
+  color: var(--text-primary);
+  line-height: 1.2;
+}
+
+.textEmphasis {
+  background: var(--grad-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Feature Images with floating neon frames */
+.feature-image-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.feature-image-container::before {
+  content: '';
+  position: absolute;
+  top: -15px;
+  left: -15px;
+  right: 15px;
+  bottom: 15px;
+  border-radius: 24px;
+  border: 1px solid var(--accent-neon-blue);
+  opacity: 0.3;
+  z-index: -1;
+  transition: var(--transition-smooth);
+}
+
+.feature-image-container:hover::before {
+  transform: translate(10px, 10px);
+  opacity: 0.8;
+  border-color: var(--accent-neon-pink);
+}
+
+img.featureimg {
+  width: 100%;
+  max-width: 550px;
+  height: 380px;
+  object-fit: cover;
+  border-radius: 20px;
+  border: 1px solid var(--border-light);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+  transition: var(--transition-smooth);
+}
+
+.feature-image-container:hover img.featureimg {
+  transform: scale(1.02) translateY(-5px);
+  box-shadow: 0 25px 60px rgba(123, 97, 255, 0.25);
+  border-color: var(--border-glow);
+}
+
+/* ==========================================
+   PRICING MATRIX
+   ========================================== */
+.pricing {
+  padding: 120px 8%;
+  position: relative;
+  background: transparent;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* SLEEK SWITCH TOGGLE */
+.pricing-toggle-container {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 50px;
+  background: rgba(255, 255, 255, 0.03);
+  padding: 8px 16px;
+  border-radius: 30px;
+  border: 1px solid var(--border-light);
+}
+
+.toggle-label {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: var(--transition-smooth);
+}
+
+.toggle-label.active {
+  color: var(--text-primary);
+  text-shadow: 0 0 10px rgba(0, 242, 254, 0.5);
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 26px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(123, 97, 255, 0.2);
+  transition: .4s;
+  border-radius: 34px;
+  border: 1px solid var(--accent-neon-purple);
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 18px;
+  width: 18px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  transition: .4s;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(0, 242, 254, 0.8);
+}
+
+input:checked + .slider {
+  background-color: var(--accent-neon-blue);
+  border-color: var(--accent-neon-blue);
+}
+
+input:checked + .slider:before {
+  transform: translateX(24px);
+  background-color: var(--bg-deep);
+}
+
+/* Pricing Grid */
+.pricing-container {
+  display: flex;
+  gap: 30px;
+  width: 100%;
+  max-width: 1200px;
+  align-items: stretch;
+  justify-content: center;
+}
+
+.pricing-card {
+  flex: 1;
+  background: var(--bg-card);
+  backdrop-filter: blur(25px) saturate(180%);
+  border: 1px solid var(--border-light);
+  padding: 40px;
+  border-radius: 24px;
+  text-align: center;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+  transition: var(--transition-spring);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  overflow: hidden;
+}
+
+.pricing-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at top right, rgba(0, 242, 254, 0.05), transparent 60%);
+  pointer-events: none;
+}
+
+/* Hover effects */
+.pricing-card:hover {
+  transform: translateY(-12px);
+  border-color: var(--accent-neon-blue);
+  box-shadow: 0 25px 50px rgba(0, 242, 254, 0.15);
+  background: var(--bg-card-hover);
+}
+
+/* Featured overrides */
+.pricing-card.featured {
+  border: 2px solid var(--accent-neon-purple);
+  transform: scale(1.05);
+  box-shadow: 0 20px 45px rgba(123, 97, 255, 0.2);
+  background: rgba(123, 97, 255, 0.05);
+}
+
+.pricing-card.featured::before {
+  background: radial-gradient(circle at top right, rgba(236, 56, 188, 0.1), transparent 60%);
+}
+
+.pricing-card.featured:hover {
+  transform: scale(1.05) translateY(-12px);
+  border-color: var(--accent-neon-pink);
+  box-shadow: 0 30px 60px rgba(236, 56, 188, 0.25);
+}
+
+.badge {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: var(--grad-primary);
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.badge p {
+  color: var(--bg-deep) !important;
+  margin: 0 !important;
+}
+
+.pricingIcon {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  margin-bottom: 25px;
+}
+
+.price {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 3rem;
+  color: var(--text-primary);
+  margin-bottom: 20px;
+}
+
+.price span {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  font-weight: 400;
+}
+
+.pricing-card ul {
+  list-style: none;
+  margin-bottom: 30px;
+  text-align: left;
+  display: inline-block;
+  align-self: center;
+}
+
+.pricing-card ul li {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  margin-bottom: 12px;
+  position: relative;
+  padding-left: 24px;
+}
+
+.pricing-card ul li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: var(--accent-neon-blue);
+  font-weight: 700;
+}
+
+.pricing-card .button14big {
+  margin-top: auto;
+  width: 100%;
+}
+
+/* ==========================================
+   FOOTER
+   ========================================== */
+.foot {
+  padding: 80px 8% 40px;
+  border-top: 1px solid var(--border-light);
+  text-align: center;
+  background: #05030f;
+  z-index: 10;
+  position: relative;
+}
+
+.foot p {
+  font-size: 0.95rem;
+  color: var(--text-muted) !important;
+  margin-bottom: 15px;
+}
+
+#open_preferences_center {
+  color: var(--accent-neon-blue);
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: var(--transition-smooth);
+  border-bottom: 1px dashed var(--accent-neon-blue);
+  padding-bottom: 2px;
+}
+
+#open_preferences_center:hover {
+  color: var(--accent-neon-pink);
+  border-color: var(--accent-neon-pink);
+}
+
+/* ==========================================
+   FLOATING BACK-TO-TOP BUBBLE
+   ========================================== */
+.back-to-top {
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  z-index: 998;
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  background: rgba(123, 97, 255, 0.15);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--accent-neon-purple);
+  color: var(--text-primary);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 10px 30px rgba(123, 97, 255, 0.3);
+  transition: var(--transition-spring);
+  opacity: 0;
+  pointer-events: none;
+  transform: scale(0.8);
+}
+
+.back-to-top:hover {
+  background: var(--grad-primary);
+  color: var(--bg-deep);
+  transform: translateY(-8px) scale(1.1);
+  box-shadow: 0 15px 35px rgba(0, 242, 254, 0.5);
+  border-color: transparent;
+}
+
+/* ==========================================
+   POPUP MODAL (GLASS STYLE)
+   ========================================== */
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(3, 0, 20, 0.85);
+  backdrop-filter: blur(12px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+}
+
+.popup-overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.popup-content {
+  background: rgba(10, 8, 26, 0.85);
+  border: 1px solid var(--accent-neon-purple);
+  padding: 45px 35px;
+  border-radius: 28px;
+  max-width: 500px;
+  width: 90%;
+  text-align: center;
+  box-shadow: 0 30px 70px rgba(123, 97, 255, 0.3);
+  transform: scale(0.7) translateY(50px);
+  transition: var(--transition-spring);
+  position: relative;
+  overflow: hidden;
+}
+
+.popup-overlay.active .popup-content {
+  transform: scale(1) translateY(0);
+}
+
+#popupText {
+  font-size: 1.15rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-top: 15px;
+  font-weight: 400;
+}
+
+.popup-close {
+  position: absolute;
+  top: 20px;
+  right: 25px;
+  font-size: 2.2rem;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: var(--transition-smooth);
+}
+
+.popup-close:hover {
+  color: var(--accent-neon-pink);
+  transform: rotate(90deg);
+}
+
+/* ==========================================
+   MOBILE RESPONSIVENESS
+   ========================================== */
+@media (max-width: 991px) {
+  .navbar {
+    width: 94%;
+    left: 3%;
+    right: 3%;
+    padding: 1rem 1.5rem;
+  }
+  
+  .feature-row, .feature-row.reverse {
+    flex-direction: column;
+    text-align: center;
+    gap: 40px;
+  }
+  
+  .feature-content {
+    align-items: center;
+  }
+  
+  img.featureimg {
+    height: auto;
+    aspect-ratio: 16/10;
+  }
+  
+  .pricing-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+  }
+  
+  .pricing-card {
+    width: 100%;
+    max-width: 450px;
+  }
+  
+  .pricing-card.featured {
+    transform: none;
+  }
+  .pricing-card.featured:hover {
+    transform: translateY(-12px);
+  }
+}
