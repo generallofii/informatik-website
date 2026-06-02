@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digitify - Die Zukunft der Datenfluidität</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://unpkg.com/lenis@1.1.20/dist/lenis.min.js"></script>
+    <script src="scripts/popup.js" defer></script>
+  </head>
+  <body>
+    <!-- CUSTOM CURSOR -->
+    <div class="custom-cursor" id="customCursor"></div>
+    <div class="custom-cursor-dot" id="customCursorDot"></div>
+
+    <!-- GLOW EFFECTS -->
+    <div class="radial-glow"></div>
+    <div class="radial-glow-2"></div>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+      <div class="logo" onclick="scrollToLander()">Digitify</div>
+      <ul class="nav-links">
+        <li><button class="button14" onclick="scrollToLander()">Home</button></li>
+        <li><button class="button14" onclick="scrollToPricing()">Pricing</button></li>
+        <li><button class="button14" onclick="window.location.href='/animtest/index.html';">ISE Cloud</button></li>
+        <li><button class="button14" onclick="window.location.href='/about/index.html';">About</button></li>
+      </ul>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section id="lander" class="lander">
+      <!-- Neural network canvas background -->
+      <canvas id="hero-canvas"></canvas>
+      
+      <h1 class="landerText">
+        Entdecke <span class="landerTextEmphasis">die Zukunft</span> mit Digitify
+      </h1>
+      <p class="text">
+        Brechen Sie Silos auf und setzen Sie den wahren Wert Ihrer digitalen Assets frei. Weltweit. Internetweit.
+      </p>
+      <button class="button14big" onclick="scrollToPricing()">Jetzt Starten</button>
+    </section>
+
+    <!-- FEATURES SECTION -->
+    <section class="features-section">
+      <!-- Row 1: Text Left, Img Right -->
+      <div class="feature-row">
+        <div class="feature-content">
+          <span class="pricingTitle">Hyper-konvergente <span class="textEmphasis">Datenfluidität</span></span>
+          <p class="text" style="text-align: left; margin: 0;">
+            Brechen Sie Silos auf und setzen Sie den wahren Wert Ihrer digitalen Assets frei. Erleben Sie nahtlose Integration über alle Vertikalen hinweg und verwandeln Sie fragmentierte Inputs in einen vereinheitlichten Stream von Handlungs-Velocity.
+          </p>
+          <button class="button14big" style="margin: 0;" data-text="Unsere patentierte Digitify DataFlow Technologie revolutioniert das fundamentale Datenmanagement und steigert die qualitative SEO-Performance um das Zehnfache. Durch die Auflösung proprietärer Datensilos und die Etablierung eines fluiden, holistischen Informationsstroms transformieren wir statischen Input in dynamische Marktpräsenz. Erleben Sie hyper-konvergente Sichtbarkeit und algorithmische Exzellenz, die Ihre digitale Reichweite auf ein völlig neues, disruptives Niveau katapultiert." onclick="openPopup(this)">Learn More</button>
+        </div>
+        <div class="feature-image-container">
+          <img src="1stthing.png" alt="fluide daten" class="featureimg">
+        </div>
+      </div>
+
+      <!-- Row 2: Img Left, Text Right (reverse) -->
+      <div class="feature-row reverse">
+        <div class="feature-content">
+          <span class="pricingTitle">Intelligent Synergy Engine™ <span class="textEmphasis">Cloud</span></span>
+          <p class="text" style="text-align: left; margin: 0;">
+            Nutzen Sie die Kraft der funktionsübergreifenden Ausrichtung. Unsere geschützte Engine schließt die Lücke zwischen Potenzial und Performance und stellt sicher, dass jeder Touchpoint für maximale Wirkung optimiert ist.
+          </p>
+          <button class="button14big" style="margin: 0;" data-text="Die revolutionäre Intelligent Synergy Engine™ (ISE) definiert die Grenzen kollaborativer Ökosysteme völlig neu. Durch die nahtlose Fusion von zukunftsweisenden, asynchronen Kommunikationsprotokollen und einer KI-gestützten Orchestrierungsmatrix eliminieren wir jegliche betriebliche Reibungspunkte in Echtzeit. Das Ergebnis? Eine holistische, hyper-effiziente Arbeitsumgebung, in der cross-funktionale Teams global skalieren können, ohne jemals den synchronen Rhythmus des gemeinsamen Erfolgs zu verlieren. Willkommen in der Zukunft der hyper-konvergenten Produktivität." onclick="openPopup(this)">Demo</button>
+        </div>
+        <div class="feature-image-container">
+          <img src="cloud.png" alt="ISEC(tm)" class="featureimg">
+        </div>
+      </div>
+
+      <!-- Row 3: Text Left, Img Right -->
+      <div class="feature-row">
+        <div class="feature-content">
+          <span class="pricingTitle">Dynamische <span class="textEmphasis">Lösungsarchitektur</span></span>
+          <p class="text" style="text-align: left; margin: 0;">
+            Das Digitify Dynamic Scaling Framework ermöglicht eine agile, reibungslose Skalierung Ihrer Systemkapazitäten um das 10-fache, 100-fache oder Tausendfache – mit nur einem einzigen, strategischen Klick.
+          </p>
+          <button class="button14big" style="margin: 0;" data-text="Das Digitify Dynamic Scaling Framework ermöglicht eine agile, reibungslose Skalierung Ihrer Systemkapazitäten um das 10-fache, 100-fache oder Tausendfache – mit nur einem einzigen, strategischen Klick. Unsere modulare Architektur adaptiert sich organisch an Ihre evolvierenden Business-Anforderungen und bietet ein hochgradig robustes Fundament, das elastisch mit Ihrer visionären Roadmap wächst, ohne die klassischen Performance-Verluste traditioneller Legacy-Systeme." onclick="openPopup(this)">View Demo</button>
+        </div>
+        <div class="feature-image-container">
+          <img src="dynarch.png" alt="Dynamische Loesungsarchitektur" class="featureimg">
+        </div>
+      </div>
+    </section>
+
+    <!-- PRICING SECTION -->
+    <section class="pricing" id="pricing">
+      <span class="pricingTitle" style="margin-bottom: 20px;">Wähle deinen <span class="textEmphasis">Plan</span></span>
+      <p class="text" style="margin-bottom: 40px; text-align: center;">Einfache Tarife für jede Skalierungsstufe</p>
+
+      <!-- Monthly/Yearly Toggle -->
+      <div class="pricing-toggle-container">
+        <span class="toggle-label active" id="monthly-label">Monatlich</span>
+        <label class="switch">
+          <input type="checkbox" id="pricing-toggle">
+          <span class="slider"></span>
+        </label>
+        <span class="toggle-label" id="yearly-label">Jährlich (20% Rabatt)</span>
+      </div>
+
+      <div class="pricing-container">
+        <!-- Basic -->
+        <div class="pricing-card">
+          <div style="width: 100%; display: flex; flex-direction: column; align-items: center;">
+            <img src="imagething.png" alt="Basic" class="pricingIcon">
+            <span class="pricingTitle" style="font-size: 1.6rem; margin-bottom: 10px;">Basic</span>
+            <p class="price" id="basic-price">$19<span>/mo</span></p>
+            <ul>
+              <li>Core Features</li>
+              <li>10GB Storage</li>
+              <li>Email Support</li>
+            </ul>
+          </div>
+          <button class="button14big" data-text="Vielen Dank für Ihr strategisches Interesse am Digitify Basic-Ökosystem. Die Freischaltung des Core-Feature-Frameworks ist fest für das globale Release-Zeitfenster 2049 eingeplant. Unsere Engineering-Teams kalibrieren derzeit die fundamentalen Speicherstrukturen, um Ihnen ab Tag eins eine optimierte, zukunftssichere Baseline für Ihre digitalen Assets zu garantieren. Wir haben Ihre Anfrage in unserer Prioritäts-Pipeline vermerkt." onclick="openPopup(this)">Get Started</button>
+        </div>
+
+        <!-- Pro Plan (Featured) -->
+        <div class="pricing-card featured">
+          <div class="badge"><p>Popular</p></div>
+          <div style="width: 100%; display: flex; flex-direction: column; align-items: center;">
+            <img src="imagething.png" alt="pro" class="pricingIcon">
+            <span class="pricingTitle" style="font-size: 1.6rem; margin-bottom: 10px;">Pro</span>
+            <p class="price" id="pro-price">$49<span>/mo</span></p>
+            <ul>
+              <li>Everything in Basic</li>
+              <li>Unlimited Storage</li>
+              <li>24/7 Priority Support</li>
+            </ul>
+          </div>
+          <button class="button14big" data-text="Bereiten Sie sich auf den Quantensprung vor: Der Zugang zur unlimitierten Digitify Pro-Infrastruktur und unserer 24/7 Priority Support Matrix befindet sich in der finalen Startphase für das große Release 2049. Sie wurden erfolgreich für die exklusive Early-Adopter-Evaluierung registriert. Sobald die Synchronisation der unbegrenzten Cloud-Kapazitäten abgeschlossen ist, erhalten Sie sofortigen Zugriff auf die Performance-Speerspitze unseres Systems." onclick="openPopup(this)">Start Free Trial</button>
+        </div>
+
+        <!-- Enterprise -->
+        <div class="pricing-card">
+          <div style="width: 100%; display: flex; flex-direction: column; align-items: center;">
+            <img src="imagething.png" alt="enterprise" class="pricingIcon">
+            <span class="pricingTitle" style="font-size: 1.6rem; margin-bottom: 10px;">Enterprise</span>
+            <p class="price" id="enterprise-price">$99<span>/mo</span></p>
+            <ul>
+              <li>Custom Solutions</li>
+              <li>Dedicated Manager</li>
+              <li>Advanced Analytics</li>
+            </ul>
+          </div>
+          <button class="button14big" data-text="Die Einleitung Ihres maßgeschneiderten Enterprise-Onboardings wurde erfolgreich initiiert. Im Zuge des strategischen Releases 2049 wird Ihnen ein dedizierter Transformation Manager zugewiesen, um hochentwickelte, prädiktive Analyse-Dashboards und maßgeschneiderte Lösungsarchitekturen direkt in Ihre Enterprise-Infrastruktur zu implementieren. Ein Mitglied unseres globalen Sales-Direktorats wird sich nach Validierung Ihrer Systemparameter mit Ihnen in Verbindung setzen." onclick="openPopup(this)">Contact Sales</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <section class="foot">
+      <p>&copy; 2026 Digitify Inc. Alle Rechte vorbehalten.</p>
+      <a href="#" id="open_preferences_center">Update cookies preferences</a>
+    </section>
+
+    <!-- BACK TO TOP -->
+    <a href="#" class="back-to-top" id="backToTop">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M18 15l-6-6-6 6"/>
+      </svg>
+    </a>
+
+    <!-- THE POPUP MODAL -->
+    <div id="customPopup" class="popup-overlay" onclick="closePopup(event)">
+      <div class="popup-content">
+        <span class="popup-close" onclick="closePopup(event)">&times;</span>
+        <h3 class="pricingTitle" style="font-size: 1.8rem; margin-bottom: 15px;">Systemmeldung</h3>
+        <p id="popupText">Laden...</p>
+      </div>
+    </div>
+
+    <!-- TERMSFEED COOKIE CONSENT -->
+    <script type="text/javascript" src="https://www.termsfeed.com/public/cookie-consent/4.2.0/cookie-consent.js" charset="UTF-8"></script>
+    <script type="text/javascript" charset="UTF-8">
+      document.addEventListener('DOMContentLoaded', function () {
+        cookieconsent.run({
+          "notice_banner_type":"simple",
+          "consent_type":"express",
+          "palette":"dark",
+          "language":"en",
+          "page_load_consent_levels":["strictly-necessary"],
+          "notice_banner_reject_button_hide":false,
+          "preferences_center_close_button_hide":false,
+          "page_refresh_confirmation_buttons":false,
+          "website_name":"Digitify"
+        });
+      });
+    </script>
+
+    <!-- INTERACTIVE SCRIPTS -->
+    <script>
+      /* --- CUSTOM CURSOR TRACKER --- */
+      const cursor = document.getElementById('customCursor');
+      const cursorDot = document.getElementById('customCursorDot');
+      
+      document.addEventListener('mousemove', (e) => {
+        cursor.style.left = e.clientX + 'px';
+        cursor.style.top = e.clientY + 'px';
+        cursorDot.style.left = e.clientX + 'px';
+        cursorDot.style.top = e.clientY + 'px';
+      });
+
+      // Hover expansion
+      const interactiveEls = document.querySelectorAll('button, a, .logo, .pricing-card');
+      interactiveEls.forEach(el => {
+        el.addEventListener('mouseenter', () => {
+          cursor.classList.add('cursor-hover');
+        });
+        el.addEventListener('mouseleave', () => {
+          cursor.classList.remove('cursor-hover');
+        });
+      });
+
+      /* --- HERO NEURAL NET CANVAS ANIMATION (PARTICLE FABRIC) --- */
+      const canvas = document.getElementById('hero-canvas');
+      const ctx = canvas.getContext('2d');
+      
+      let width = canvas.width = window.innerWidth;
+      let height = canvas.height = window.innerHeight;
+      
+      let particles = [];
+      const spacing = 45; // grid spacing in pixels
+      let cols = Math.ceil(width / spacing) + 1;
+      let rows = Math.ceil(height / spacing) + 1;
+
+      window.addEventListener('resize', () => {
+        width = canvas.width = window.innerWidth;
+        height = canvas.height = window.innerHeight;
+        initFabric();
+      });
+
+      let mouse = { x: null, y: null };
+      document.addEventListener('mousemove', (e) => {
+        mouse.x = e.clientX;
+        mouse.y = e.clientY;
+      });
+      document.addEventListener('mouseleave', () => {
+        mouse.x = null;
+        mouse.y = null;
+      });
+
+      function initFabric() {
+        particles = [];
+        cols = Math.ceil(width / spacing) + 1;
+        rows = Math.ceil(height / spacing) + 1;
+        
+        for (let r = 0; r < rows; r++) {
+          for (let c = 0; c < cols; c++) {
+            const ox = c * spacing;
+            const oy = r * spacing;
+            particles.push({
+              x: ox,
+              y: oy,
+              ox: ox,
+              oy: oy,
+              vx: 0,
+              vy: 0,
+              col: c,
+              row: r
+            });
+          }
+        }
+      }
+
+      initFabric();
+
+      function animate() {
+        ctx.clearRect(0, 0, width, height);
+        
+        // Physics update loop
+        particles.forEach(p => {
+          const k = 0.05; // spring strength
+          const springX = (p.ox - p.x) * k;
+          const springY = (p.oy - p.y) * k;
+          
+          let repelX = 0;
+          let repelY = 0;
+          let dist = 99999;
+          
+          if (mouse.x !== null) {
+            const dx = p.x - mouse.x;
+            const dy = p.y - mouse.y;
+            dist = Math.sqrt(dx*dx + dy*dy);
+            
+            const radius = 200; // warp radius
+            if (dist < radius) {
+              const force = (radius - dist) / radius;
+              const angle = Math.atan2(dy, dx);
+              const strength = 22; // push strength
+              repelX = Math.cos(angle) * force * strength;
+              repelY = Math.sin(angle) * force * strength;
+            }
+          }
+          
+          const friction = 0.85;
+          p.vx = (p.vx + springX + repelX) * friction;
+          p.vy = (p.vy + springY + repelY) * friction;
+          p.x += p.vx;
+          p.y += p.vy;
+          
+          ctx.beginPath();
+          ctx.arc(p.x, p.y, dist < 120 ? 2 : 1, 0, Math.PI * 2);
+          if (dist < 120) {
+            const glow = (120 - dist) / 120;
+            ctx.fillStyle = `rgba(0, 242, 254, ${0.4 + glow * 0.6})`;
+          } else {
+            ctx.fillStyle = 'rgba(123, 97, 255, 0.15)';
+          }
+          ctx.fill();
+        });
+        
+        // Connection mesh lines drawing
+        particles.forEach(p => {
+          const rightIdx = p.col + 1 < cols ? p.row * cols + (p.col + 1) : -1;
+          const bottomIdx = (p.row + 1) * cols + p.col;
+          
+          const getLineStyle = (pA, pB) => {
+            if (mouse.x === null) return { color: 'rgba(123, 97, 255, 0.04)', width: 0.8 };
+            const d1 = Math.sqrt((pA.x - mouse.x)**2 + (pA.y - mouse.y)**2);
+            const d2 = Math.sqrt((pB.x - mouse.x)**2 + (pB.y - mouse.y)**2);
+            const avgD = (d1 + d2) / 2;
+            const radius = 200;
+            if (avgD < radius) {
+              const strength = (radius - avgD) / radius;
+              return {
+                color: `rgba(0, 242, 254, ${0.05 + strength * 0.4})`,
+                width: 0.8 + strength * 1.5
+              };
+            }
+            return { color: 'rgba(123, 97, 255, 0.04)', width: 0.8 };
+          };
+          
+          if (rightIdx !== -1 && rightIdx < particles.length) {
+            const pRight = particles[rightIdx];
+            const style = getLineStyle(p, pRight);
+            ctx.beginPath();
+            ctx.moveTo(p.x, p.y);
+            ctx.lineTo(pRight.x, pRight.y);
+            ctx.strokeStyle = style.color;
+            ctx.lineWidth = style.width;
+            ctx.stroke();
+          }
+          
+          if (bottomIdx < particles.length) {
+            const pBottom = particles[bottomIdx];
+            const style = getLineStyle(p, pBottom);
+            ctx.beginPath();
+            ctx.moveTo(p.x, p.y);
+            ctx.lineTo(pBottom.x, pBottom.y);
+            ctx.strokeStyle = style.color;
+            ctx.lineWidth = style.width;
+            ctx.stroke();
+          }
+        });
+        
+        requestAnimationFrame(animate);
+      }
+      
+      animate();
+
+      /* --- LENIS SMOOTH SCROLL INITIALIZATION --- */
+      const lenis = new Lenis({
+        duration: 1.2,
+        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+        smoothWheel: true,
+      });
+
+      function raf(time) {
+        lenis.raf(time);
+        requestAnimationFrame(raf);
+      }
+      requestAnimationFrame(raf);
+
+      // Global scroll targets
+      window.scrollToLander = () => {
+        lenis.scrollTo('#lander');
+      };
+      window.scrollToPricing = () => {
+        lenis.scrollTo('#pricing');
+      };
+
+      /* --- SHOW/HIDE NAVBAR ON SCROLL WITH INERTIA --- */
+      const navbar = document.querySelector('.navbar');
+      lenis.on('scroll', (e) => {
+        if (e.scroll > 120) {
+          if (e.direction > 0) {
+            // scrolling down
+            navbar.style.transform = 'translateY(-120px)';
+          } else {
+            // scrolling up
+            navbar.style.transform = 'translateY(0)';
+          }
+        } else {
+          navbar.style.transform = 'translateY(0)';
+        }
+      });
+
+      /* --- PRICING SWITCH TOGGLE SCRIPT --- */
+      const toggle = document.getElementById('pricing-toggle');
+      const basicPrice = document.getElementById('basic-price');
+      const proPrice = document.getElementById('pro-price');
+      const enterprisePrice = document.getElementById('enterprise-price');
+      const monthlyLabel = document.getElementById('monthly-label');
+      const yearlyLabel = document.getElementById('yearly-label');
+
+      toggle.addEventListener('change', () => {
+        if(toggle.checked) {
+          // Yearly prices (20% off monthly)
+          basicPrice.innerHTML = "$15<span>/mo</span>";
+          proPrice.innerHTML = "$39<span>/mo</span>";
+          enterprisePrice.innerHTML = "$79<span>/mo</span>";
+          
+          monthlyLabel.classList.remove('active');
+          yearlyLabel.classList.add('active');
+        } else {
+          // Monthly prices
+          basicPrice.innerHTML = "$19<span>/mo</span>";
+          proPrice.innerHTML = "$49<span>/mo</span>";
+          enterprisePrice.innerHTML = "$99<span>/mo</span>";
+          
+          monthlyLabel.classList.add('active');
+          yearlyLabel.classList.remove('active');
+        }
+      });
+
+      /* --- BACK TO TOP INTERACTIVE SCROLL --- */
+      const btn = document.getElementById("backToTop");
+      
+      // Monitor scroll to reveal back-to-top button
+      lenis.on('scroll', (e) => {
+        if (e.scroll > 400) {
+          btn.style.opacity = "1";
+          btn.style.pointerEvents = "auto";
+          btn.style.transform = "scale(1)";
+        } else {
+          btn.style.opacity = "0";
+          btn.style.pointerEvents = "none";
+          btn.style.transform = "scale(0.8)";
+        }
+      });
+
+      btn.addEventListener("click", (e) => {
+        e.preventDefault();
+        lenis.scrollTo(0);
+      });
+    </script>
+  </body>
+</html>
