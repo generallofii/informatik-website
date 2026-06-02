@@ -153,7 +153,7 @@ document.addEventListener("DOMContentLoaded", () => {
   function playBotMove() {
     let depth = 2; // medium
     if (botDifficulty === "easy") depth = 1;
-    else if (botDifficulty === "hard") depth = 3;
+    else if (botDifficulty === "hard") depth = 5;
 
     let bestMove;
     const moves = game.moves();
