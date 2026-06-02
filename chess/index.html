@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Digitify - Chess AI Engine</title>
+  
+  <link rel="stylesheet" href="/chess/styles.css">
+  
+  <!-- Chess game validation library CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/chess.js/0.10.3/chess.min.js"></script>
+  <script src="/chess/js/main.js" defer></script>
+</head>
+<body>
+
+  <!-- AMBIENT GLOWS -->
+  <div class="glow-1"></div>
+  <div class="glow-2"></div>
+
+  <!-- TRANSLUCENT NAVBAR -->
+  <nav class="navbar">
+    <div class="logo" onclick="window.location.href='/index.html#lander';">Digitify</div>
+    <ul class="nav-links">
+      <li><button class="button14" onclick="window.location.href='/index.html#lander';">Home</button></li>
+      <li><button class="button14" onclick="window.location.href='/index.html#pricing';">Pricing</button></li>
+      <li><button class="button14" onclick="window.location.href='/animtest/index.html';">ISE Cloud</button></li>
+      <li><button class="button14" onclick="window.location.href='/about/index.html';">About</button></li>
+      <li><button class="button14" onclick="window.location.href='/chess/index.html';">Chess</button></li>
+    </ul>
+  </nav>
+
+  <!-- MAIN CHESS GAME CONTAINER -->
+  <main class="game-container">
+    
+    <!-- LEFT SIDE: BOARD -->
+    <section class="board-side">
+      <div class="board-wrapper">
+        <div id="board" class="chessboard"></div>
+      </div>
+    </section>
+
+    <!-- RIGHT SIDE: CONTROL PANEL -->
+    <section class="control-side">
+      <div class="status-card" id="bot-info-card">
+        <h2 class="card-title">Intelligent Synergy Chess AI</h2>
+        
+        <!-- Bot status details -->
+        <div class="bot-info">
+          <div class="bot-avatar">🤖</div>
+          <div class="bot-status-indicator">
+            <span class="bot-name">SynergyBot v1.0</span>
+            <span class="bot-state">
+              <span class="thinking-dot"></span>
+              <span id="bot-state">Your turn</span>
+            </span>
+          </div>
+        </div>
+
+        <!-- Captured piece trays -->
+        <div class="captured-panel">
+          <span class="captured-title">Taken by You (Black Pieces)</span>
+          <div id="white-captured" class="captured-box"></div>
+        </div>
+
+        <div class="captured-panel">
+          <span class="captured-title">Taken by AI (White Pieces)</span>
+          <div id="black-captured" class="captured-box"></div>
+        </div>
+
+        <!-- Log tracking list -->
+        <div class="move-log" id="move-log">
+          <div class="log-entry">Match started. Playing as <span>White</span>.</div>
+        </div>
+
+        <!-- Controls (level selection & reset) -->
+        <div class="control-buttons">
+          <div class="difficulty-select">
+            <button class="diff-btn" data-diff="easy">EASY</button>
+            <button class="diff-btn active" data-diff="medium">MEDIUM</button>
+            <button class="diff-btn" data-diff="hard">HARD</button>
+          </div>
+          <button class="restart-btn" id="restart-btn">Restart Game</button>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+</body>
+</html>
